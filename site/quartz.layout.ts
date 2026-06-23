@@ -32,7 +32,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
+    Component.ConditionalRender({
+      component: Component.PageTitle(),
+      condition: (page) => !page.fileData.slug?.startsWith("geidai"),
+    }),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -69,7 +72,10 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
+    Component.ConditionalRender({
+      component: Component.PageTitle(),
+      condition: (page) => !page.fileData.slug?.startsWith("geidai"),
+    }),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
