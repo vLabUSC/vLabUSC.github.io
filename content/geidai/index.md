@@ -6,15 +6,15 @@ publish: true
 **Tokyo University of the Arts (Geidai)** · July 7–10, 2026
 Instructor: **Peter Brinson**, Professor of Practice, University of Southern California 
 
-Through lectures, exercises, and workshops, students explore worldbuilding as a foundation for game design and development. The intensive uses a design framework called  [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/), which helps students build small playable worlds that are expressive through their limits.
+Through lectures, exercises, and workshops, students explore worldbuilding as a foundation for game design and development. The intensive uses a design framework called  [Bounded Worlds](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/), which helps students build small playable worlds that are expressive through their limits.
 
 ---
 
 ## Worldbuilding, Bounded
 
-Every game design project faces the same challenge: our initial ideas are too large to build. The [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) framework is a direct response. It encourages worlds that are expressive through their **limits**.
+Every game design project faces the same challenge: our initial ideas are too large to build. The [Bounded Worlds](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/) framework is a direct response. It encourages worlds that are expressive through their **limits**.
 
-Because the world has overt limits, the designer can focus on a manageable set of situations. Brian Upton defines a [situation](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) as an interval of play that contains a choice. Even a small handful of situations can make a playable world vibrant and engaging. The player navigates a path through them; through exploration, their choices express within constraint.
+Because the world has overt limits, the designer can focus on a manageable set of situations. Brian Upton defines a [situation](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) as an interval of play that contains a choice. Even a small handful of situations can make a playable world vibrant and engaging. The player navigates a path through them; through exploration, their choices express within constraint.
 
 By the end of the intensive, you will make a **playable world — a bounded world**.
 
@@ -29,7 +29,7 @@ If it doesn't, the world is **Finite**. If it does, ask whether the player can r
 - **Closed** — The player can encounter the edge of the world. The boundary is present and meaningful, but cannot be passed.
 - **Threshold** — The player approaches and passes from one state or space into another.
 
-See [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) for worked examples of each.
+See [Bounded Worlds](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/) for worked examples of each.
 
 ---
 
@@ -37,22 +37,22 @@ See [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) fo
 
 ### Day 1 — Tuesday, July 7 — Situations & Consistency
 A theory of worldbuilding.
-- [Situational Game Design for Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) 
-- [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
-- Invention — [Wolf's Taxonomy of Invention](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Taxonomy-of-Invention/)
+- [Situational Game Design for Bounded Worlds](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) 
+- [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
+- Invention — [Wolf's Taxonomy of Invention](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/Vocabulary/Taxonomy-of-Invention/)
 - **Workshop:** labyrinths
 
 ### Day 2 — Wednesday, July 8 — The Three Boundaries
 Which kind of edge does your world have?
-- [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
+- [Bounded Worlds](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/) — Finite / Closed / Threshold
 - Experience Goals
 - Single A Games
 - Interpretability
 
 ### Day 3 — Thursday, July 9 — Responsiveness and Point of View
 The player's actions and point of view as our design models.  
-- [World Responsiveness](https://vlabusc.github.io/The-GET/Design/Worldbuilding/The-Experience/World-Responsiveness) 
-- [Situated Player Roles](https://vlabusc.github.io/The-GET/Design/Storytelling/) 
+- [World Responsiveness](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Worldbuilding/The-Experience/World-Responsiveness) 
+- [Situated Player Roles](https://vlabusc.github.io/The-GET/The-GET-on-the-Browser/Design/Storytelling/) 
 - Formal elements of play
 
 ### Day 4 — Friday, July 10 — Game Design For the Project
