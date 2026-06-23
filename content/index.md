@@ -1,11 +1,15 @@
 ---
-title: "The GET"
+title: "The vLab"
 publish: true
 ---
 
-## ▸ Classes
+<div align="center">
 
-- [**Geidai Worldbuilding Intensive** — Tokyo University of the Arts](Geidai/)
+# Classes
+
+</div>
+
+- [**Geidai Worldbuilding Intensive** — Tokyo University of the Arts](geidai/)
 
 <div align="center">
 
