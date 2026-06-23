@@ -21,8 +21,14 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.TagList(),
   ],
   left: [
@@ -38,18 +44,10 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({
-      title: "",
-      mapFn: (node) => {
-        // Sidebar shows the plain folder name; each folder's index page keeps
-        // its own longer title (e.g. "Situated Player Roles", "Small Worlds: ...").
-        if (node.slugSegment === "Storytelling") {
-          node.displayName = "Storytelling"
-        }
-        if (node.slugSegment === "Worldbuilding") {
-          node.displayName = "Worldbuilding"
-        }
-      },
+    Component.ConditionalRender({
+      component: Component.Explorer({ title: "" }),
+      // Hide the left nav on the hub home page only.
+      condition: (page) => page.fileData.slug !== "index",
     }),
   ],
   right: [
