@@ -1,9 +1,7 @@
 ---
-title: "Worldbuilding Intensive — Syllabus"
+title: "Worldbuilding Intensive"
 publish: true
 ---
-
-# Worldbuilding Intensive
 
 **Tokyo University of the Arts (Geidai)** · July 7–10, 2026
 Instructor: **Peter Brinson**, Professor of Practice, University of Southern California (games program)

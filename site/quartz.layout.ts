@@ -45,7 +45,15 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.ConditionalRender({
-      component: Component.Explorer({ title: "" }),
+      component: Component.Explorer({
+        title: "",
+        mapFn: (node) => {
+          // Show the Geidai class's nav entry as just "Syllabus".
+          if (node.slugSegment === "geidai") {
+            node.displayName = "Syllabus"
+          }
+        },
+      }),
       // Hide the left nav on the hub home page only.
       condition: (page) => page.fileData.slug !== "index",
     }),
@@ -75,13 +83,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.Explorer({
       title: "",
       mapFn: (node) => {
-        // Sidebar shows the plain folder name; each folder's index page keeps
-        // its own longer title (e.g. "Situated Player Roles", "Small Worlds: ...").
-        if (node.slugSegment === "Storytelling") {
-          node.displayName = "Storytelling"
-        }
-        if (node.slugSegment === "Worldbuilding") {
-          node.displayName = "Worldbuilding"
+        // Show the Geidai class's nav entry as just "Syllabus".
+        if (node.slugSegment === "geidai") {
+          node.displayName = "Syllabus"
         }
       },
     }),
