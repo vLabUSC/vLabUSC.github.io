@@ -39,9 +39,11 @@ See [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) fo
 ### Day 1 — Tuesday, July 7 — Situations & Consistency
 A theory of worldbuilding.
 - [Situational Game Design for Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) 
+- [[Game - Blue Prince]]
+- Workshop: paper labyrinths
+- [Labyrinths: 3 kinds](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Passage#structure-three-types-of-mazes), and examples (ppt)
 - [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
 - Invention,  [Wolf's Taxonomy of Invention](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Taxonomy-of-Invention/)
-- Workshop: paper labyrinths
 - Workshop: [[Unity - Walking Wonders]]
 - [[Assignment A - Playable Labyrinth]]
 
@@ -49,6 +51,7 @@ A theory of worldbuilding.
 Which kind of edge does your world have?
 - [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
 - Experience Goals
+- [[Situated Player Role 2 - The Traveler, World as Passage|The Traveler, World as Passage]]
 - Single A Games
 - Interpretability
 
@@ -56,9 +59,9 @@ Which kind of edge does your world have?
 The player's actions and point of view as our design models.  
 - [World Responsiveness](https://vlabusc.github.io/The-GET/Design/Worldbuilding/The-Experience/World-Responsiveness) 
 - [Situated Player Roles](https://vlabusc.github.io/The-GET/Design/Storytelling/) 
-- Formal elements of play
+- Formal elements of play (ppt)
 
-### Day 4 — Friday, July 10 — Game Design For the Project
+### Day 4 — Friday, July 10 — The Experience
 Embracing systems.
 - Luck, skill, and investment
 - Complicated vs. complex systems
