@@ -40,6 +40,7 @@ See [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) fo
 A theory of worldbuilding.
 - [Situational Game Design for Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) 
 - [[Game - Blue Prince]]
+- [[World - Backrooms]]
 - Workshop: paper labyrinths
 - [Labyrinths: 3 kinds](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Passage#structure-three-types-of-mazes), and examples (ppt)
 - [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
