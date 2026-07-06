@@ -17,4 +17,4 @@ publish: true
 
 </div>
 
-[**The GET**](https://vlabusc.github.io/The-GET/) — The Game Engine Tutor maps an early idea for a playable story or world — clarifying what is known, what questions remain, and how the prototype might be built in a game engine.
+[**The GET**](https://vlabusc.github.io/The-GET/) — The Game Engine Tutor maps an early idea for a playable story or world, outlining what is known, what questions remain, and how the prototype might be built in a game engine.

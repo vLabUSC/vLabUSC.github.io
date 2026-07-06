@@ -7,7 +7,7 @@ publish: true
 **Tokyo University of the Arts (Geidai)** · July 7–10, 2026
 Instructor: **Peter Brinson**, Professor of Practice, University of Southern California 
 
-Through lectures, exercises, and workshops, students explore worldbuilding as a foundation for game design and development. The intensive uses a design framework called  [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/), which helps students build small playable worlds that are expressive through their limits.
+Through lectures, exercises, and workshops, students explore worldbuilding as a foundation for game design and development. The intensive uses a design framework called  [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/), which encourages students to build small playable worlds that are expressive through their limits.
 
 ---
 
@@ -15,7 +15,7 @@ Through lectures, exercises, and workshops, students explore worldbuilding as a 
 
 Every game design project faces the same challenge: our initial ideas are too large to build. The [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) framework is a direct response. It encourages worlds that are expressive through their **limits**.
 
-Because the world has overt limits, the designer can focus on a manageable set of situations. Brian Upton defines a [situation](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) as an interval of play that contains a choice. Even a small handful of situations can make a playable world vibrant and engaging. The player navigates a path through them; through exploration, their choices express within constraint.
+Because the world has overt limits, the designer can focus on a manageable set of situations. Brian Upton defines a [situation](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) as an interval of play that contains a choice. Even a small handful of situations can make a playable world vibrant and engaging. The player navigates a path through them; through exploration, choice becomes expressive within constraint.
 
 By the end of the intensive, you will make a **playable world — a bounded world**.
 
