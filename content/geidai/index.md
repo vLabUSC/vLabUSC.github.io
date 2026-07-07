@@ -44,7 +44,6 @@ A theory of worldbuilding.
 - Workshop: paper labyrinths
 - [Labyrinths: 3 kinds](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Passage#structure-three-types-of-mazes), and examples (ppt)
 - [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
-- Invention,  [Wolf's Taxonomy of Invention](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Taxonomy-of-Invention/)
 - Workshop: [[Unity - Maze And Doors]]
 - Workshop: Materials.  [Sample Image](https://drive.google.com/file/d/1t8AWJGyH26UzRS1RNgdjW-6RmWTT6Eor/view)
 - [[Assignment A - Playable Labyrinth]]
@@ -52,6 +51,7 @@ A theory of worldbuilding.
 ### Day 2 — Wednesday, July 8 — The Three Boundaries
 Which kind of edge does your world have?
 - [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
+- [[Lecture - Building Imaginary Worlds]]
 - Experience Goals
 - [[Situated Player Role 2 - The Traveler, World as Passage|The Traveler, World as Passage]]
 - Single A Games
