@@ -45,7 +45,8 @@ A theory of worldbuilding.
 - [Labyrinths: 3 kinds](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Passage#structure-three-types-of-mazes), and examples (ppt)
 - [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
 - Invention,  [Wolf's Taxonomy of Invention](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Taxonomy-of-Invention/)
-- Workshop: [[Unity - Walking Wonders]]
+- Workshop: [[Unity - Maze And Doors]]
+- Workshop: Materials.  [Sample Image](https://drive.google.com/file/d/1t8AWJGyH26UzRS1RNgdjW-6RmWTT6Eor/view)
 - [[Assignment A - Playable Labyrinth]]
 
 ### Day 2 — Wednesday, July 8 — The Three Boundaries
