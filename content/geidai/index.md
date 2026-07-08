@@ -54,6 +54,7 @@ Which kind of edge does your world have?
 - [Building Imaginary Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Building-Imaginary-Worlds)
 - Experience Goals - Playtest [[Assignment A - Playable Labyrinth]]
 - Workshop: Skyboxes.  [Sample Material](https://assetstore.unity.com/packages/2d/textures-materials/sky/starfield-skybox-92717)
+- Workshop: 3D Models. [Sample Model](https://assetstore.unity.com/packages/3d/props/hamstercage-110028)
 - [The Traveler, World as Presence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence)
 - Single A Games and Catalysts of Speculation
 - Players and Designers
