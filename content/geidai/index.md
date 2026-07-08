@@ -39,29 +39,31 @@ See [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) fo
 ### Day 1 — Tuesday, July 7 — Situations & Consistency
 A theory of worldbuilding.
 - [Situational Game Design for Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) 
-- [[Game - Blue Prince]]
+- [Blue Prince](https://vlabusc.github.io/The-GET/Design/_References/Game---Blue-Prince)
 - [Backrooms](https://vlabusc.github.io/The-GET/Design/_References/World---Backrooms)
 - Workshop: paper labyrinths
 - [Labyrinths: 3 kinds](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence#structure-three-types-of-mazes)
 - [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
 - Workshop: [[Unity - Maze And Doors]]
-- Workshop: Materials.  [Sample Image](https://drive.google.com/file/d/1t8AWJGyH26UzRS1RNgdjW-6RmWTT6Eor/view)
+- Workshop: Materials.  [Sample Texture](https://drive.google.com/file/d/1t8AWJGyH26UzRS1RNgdjW-6RmWTT6Eor/view)
 - [[Assignment A - Playable Labyrinth]]
 
 ### Day 2 — Wednesday, July 8 — The Three Boundaries
 Which kind of edge does your world have?
 - [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
-- [[Lecture - Building Imaginary Worlds]]
+- [Building Imaginary Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Building-Imaginary-Worlds)
 - Experience Goals - Playtest [[Assignment A - Playable Labyrinth]]
+- Workshop: Skyboxes.  [Sample Material](https://assetstore.unity.com/packages/2d/textures-materials/sky/starfield-skybox-92717)
 - [The Traveler, World as Presence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence)
-- Single A Games
-- Interpretability
+- Single A Games and Catalysts of Speculation
+- Players and Designers
 - [[Assignment B - Bounded World]]
 
 ### Day 3 — Thursday, July 9 — Responsiveness and Point of View
 The player's actions and point of view as our design models.  
 - [World Responsiveness](https://vlabusc.github.io/The-GET/Design/Worldbuilding/The-Experience/World-Responsiveness) 
 - [Situated Player Roles](https://vlabusc.github.io/The-GET/Design/Storytelling/) 
+- Walking Wonders
 - Formal elements of play (ppt)
 
 ### Day 4 — Friday, July 10 — The Experience
