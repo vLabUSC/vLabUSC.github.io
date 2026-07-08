@@ -53,7 +53,7 @@ Which kind of edge does your world have?
 - [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
 - [[Lecture - Building Imaginary Worlds]]
 - Experience Goals - Playtest [[Assignment A - Playable Labyrinth]]
-- [[Situated Player Role 2 - The Traveler, World as Presence|The Traveler, World as Presence]]
+- [The Traveler, World as Presence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence)
 - Single A Games
 - Interpretability
 - [[Assignment B - Bounded World]]
