@@ -56,12 +56,12 @@ Which kind of edge does your world have?
 - Workshop: Skyboxes.  [Sample Material](https://assetstore.unity.com/packages/2d/textures-materials/sky/starfield-skybox-92717)
 - Workshop: 3D Models. [Sample Model](https://assetstore.unity.com/packages/3d/props/hamstercage-110028)
 - [The Traveler, World as Presence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence)
-- Single A Games and Catalysts of Speculation
-- Players and Designers
 - [[Assignment B - Bounded World]]
 
 ### Day 3 — Thursday, July 9 — Responsiveness and Point of View
 The player's actions and point of view as our design models.  
+- Single A Games and Catalysts of Speculation
+- Players and Designers
 - [World Responsiveness](https://vlabusc.github.io/The-GET/Design/Worldbuilding/The-Experience/World-Responsiveness) 
 - [Situated Player Roles](https://vlabusc.github.io/The-GET/Design/Storytelling/) 
 - Walking Wonders
