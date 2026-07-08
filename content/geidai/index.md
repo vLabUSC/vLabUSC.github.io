@@ -42,7 +42,7 @@ A theory of worldbuilding.
 - [[Game - Blue Prince]]
 - [Backrooms](https://vlabusc.github.io/The-GET/Design/_References/World---Backrooms)
 - Workshop: paper labyrinths
-- [Labyrinths: 3 kinds](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Passage#structure-three-types-of-mazes)
+- [Labyrinths: 3 kinds](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence#structure-three-types-of-mazes)
 - [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
 - Workshop: [[Unity - Maze And Doors]]
 - Workshop: Materials.  [Sample Image](https://drive.google.com/file/d/1t8AWJGyH26UzRS1RNgdjW-6RmWTT6Eor/view)
@@ -53,7 +53,7 @@ Which kind of edge does your world have?
 - [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
 - [[Lecture - Building Imaginary Worlds]]
 - Experience Goals - Playtest [[Assignment A - Playable Labyrinth]]
-- [[Situated Player Role 2 - The Traveler, World as Passage|The Traveler, World as Passage]]
+- [[Situated Player Role 2 - The Traveler, World as Presence|The Traveler, World as Presence]]
 - Single A Games
 - Interpretability
 - [[Assignment B - Bounded World]]
