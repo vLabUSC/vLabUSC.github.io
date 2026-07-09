@@ -60,11 +60,12 @@ Which kind of edge does your world have?
 
 ### Day 3 — Thursday, July 9 — Responsiveness and Point of View
 The player's actions and point of view as our design models.  
-- Single A Games and Catalysts of Speculation
+- Single A Games and [Catalysts of Speculation](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Exposition-and-Anticipation/Catalysts-of-Speculation)
 - Players and Designers
 - [The Investigator, World as Evidence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-1---The-Investigator,-World-as-Evidence)
 - Walking Wonders
 - Formal elements of play (ppt)
+- [[Assignment C - Responsive World]]
 
 ### Day 4 — Friday, July 10 — The Experience
 Embracing systems.
