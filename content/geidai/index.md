@@ -62,8 +62,7 @@ Which kind of edge does your world have?
 The player's actions and point of view as our design models.  
 - Single A Games and Catalysts of Speculation
 - Players and Designers
-- [World Responsiveness](https://vlabusc.github.io/The-GET/Design/Worldbuilding/The-Experience/World-Responsiveness) 
-- [Situated Player Roles](https://vlabusc.github.io/The-GET/Design/Storytelling/) 
+- [The Investigator, World as Evidence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-1---The-Investigator,-World-as-Evidence)
 - Walking Wonders
 - Formal elements of play (ppt)
 
