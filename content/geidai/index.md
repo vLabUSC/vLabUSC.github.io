@@ -64,7 +64,7 @@ The player's actions and point of view as our design models.
 - Players and Designers
 - [The Investigator, World as Evidence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-1---The-Investigator,-World-as-Evidence)
 - Expressive Boundaries - Playtest [[Assignment B - Bounded World]]
-- Walking Wonders
+- [Walking Wonders, (the package)](https://drive.google.com/drive/folders/1na3NOAY_nmneFtK8AHHNSRRZJK2H5E2s)
 - Formal elements of play (ppt)
 - [[Assignment C - From Maze to Labyrinth]]
 
