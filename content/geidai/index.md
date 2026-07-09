@@ -65,7 +65,7 @@ The player's actions and point of view as our design models.
 - [The Investigator, World as Evidence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-1---The-Investigator,-World-as-Evidence)
 - Walking Wonders
 - Formal elements of play (ppt)
-- [[Assignment C - Responsive World]]
+- [[Assignment C - From Maze to Labyrinth]]
 
 ### Day 4 — Friday, July 10 — The Experience
 Embracing systems.
