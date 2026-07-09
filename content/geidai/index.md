@@ -63,6 +63,7 @@ The player's actions and point of view as our design models.
 - Single A Games and [Catalysts of Speculation](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Exposition-and-Anticipation/Catalysts-of-Speculation)
 - Players and Designers
 - [The Investigator, World as Evidence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-1---The-Investigator,-World-as-Evidence)
+- Expressive Boundaries - Playtest [[Assignment B - Bounded World]]
 - Walking Wonders
 - Formal elements of play (ppt)
 - [[Assignment C - From Maze to Labyrinth]]
