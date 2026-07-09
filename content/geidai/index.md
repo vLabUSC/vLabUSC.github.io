@@ -46,13 +46,13 @@ A theory of worldbuilding.
 - [Consistency and Internal Logic](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Vocabulary/Consistency-and-Internal-Logic) 
 - Workshop: [[Unity - Maze And Doors]]
 - Workshop: Materials.  [Sample Texture](https://drive.google.com/file/d/1t8AWJGyH26UzRS1RNgdjW-6RmWTT6Eor/view)
-- [[Assignment A - Playable Labyrinth]]
+- [[Assignment A - Playable Maze]]
 
 ### Day 2 — Wednesday, July 8 — The Three Boundaries
 Which kind of edge does your world have?
 - [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
 - [Building Imaginary Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Building-Imaginary-Worlds)
-- Experience Goals - Playtest [[Assignment A - Playable Labyrinth]]
+- Experience Goals - Playtest [[Assignment A - Playable Maze]]
 - Workshop: Skyboxes.  [Sample Material](https://assetstore.unity.com/packages/2d/textures-materials/sky/starfield-skybox-92717)
 - Workshop: 3D Models. [Sample Model](https://assetstore.unity.com/packages/3d/props/hamstercage-110028)
 - [The Traveler, World as Presence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence)
