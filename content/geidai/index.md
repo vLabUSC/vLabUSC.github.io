@@ -36,7 +36,7 @@ See [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) fo
 
 ## Schedule
 
-### Day 1 — Tuesday, July 7 — Situations & Consistency
+### Day 1 — Tuesday, July 7 — Mazes & Situations 
 A theory of worldbuilding.
 - [Situational Game Design for Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Situational-Game-Design-for-Bounded-Worlds) 
 - [Blue Prince](https://vlabusc.github.io/The-GET/Design/_References/Game---Blue-Prince)
@@ -48,7 +48,7 @@ A theory of worldbuilding.
 - Workshop: Materials.  [Sample Texture](https://drive.google.com/file/d/1t8AWJGyH26UzRS1RNgdjW-6RmWTT6Eor/view)
 - [[Assignment A - Playable Maze]]
 
-### Day 2 — Wednesday, July 8 — The Three Boundaries
+### Day 2 — Wednesday, July 8 — Three Boundaries
 Which kind of edge does your world have?
 - [Bounded Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/) — Finite / Closed / Threshold
 - [Building Imaginary Worlds](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Lecture---Building-Imaginary-Worlds)
@@ -58,7 +58,7 @@ Which kind of edge does your world have?
 - [The Traveler, World as Presence](https://vlabusc.github.io/The-GET/Design/Storytelling/Situated-Player-Role-2---The-Traveler,-World-as-Presence)
 - [[Assignment B - Bounded World]]
 
-### Day 3 — Thursday, July 9 — Responsiveness and Point of View
+### Day 3 — Thursday, July 9 — Point of View
 The player's actions and point of view as our design models.  
 - Single A Games and [Catalysts of Speculation](https://vlabusc.github.io/The-GET/Design/Worldbuilding/Exposition-and-Anticipation/Catalysts-of-Speculation)
 - Players and Designers
@@ -68,7 +68,7 @@ The player's actions and point of view as our design models.
 - Formal elements of play (ppt)
 - [[Assignment C - From Maze to Labyrinth]]
 
-### Day 4 — Friday, July 10 — The Experience
+### Day 4 — Friday, July 10 — Expression
 Embracing systems.
 - Luck, skill, and investment
 - Complicated vs. complex systems
