@@ -1,0 +1,15 @@
+{
+  "name": "vlab-decks",
+  "private": true,
+  "type": "module",
+  "description": "Deck builders for the vLab hub. Marp = paged deck; build-scroll = scrolling frames.",
+  "scripts": {
+    "scroll": "node build-scroll.mjs",
+    "scroll:watch": "node build-scroll.mjs --watch",
+    "scroll:serve": "node build-scroll.mjs --serve",
+    "marp": "node build-scroll.mjs && npx -y @marp-team/marp-cli@latest .build/retreat.marp.md -o ../site/quartz/static/decks/retreat.html"
+  },
+  "dependencies": {
+    "marked": "^12.0.0"
+  }
+}
