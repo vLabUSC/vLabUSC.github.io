@@ -192,6 +192,9 @@ const page = (title, frames, dots) => `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #202228;
@@ -200,7 +203,7 @@ const page = (title, frames, dots) => `<!doctype html>
     --card: #fff;
     --backdrop: #34383f; /* dark, so the pastel cards read as the lit surface */
     --pad: clamp(2rem, 5vw, 5rem);
-    --font: "Segoe UI", -apple-system, system-ui, sans-serif;
+    --font: "Lexend", "Segoe UI", -apple-system, system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -276,7 +279,7 @@ const page = (title, frames, dots) => `<!doctype html>
   .frame.b .card a { color: #0a6e8a; overflow-wrap: anywhere; }
   /* type scales with the card, not the window, so frames stay slide-like */
   .card h1 {
-    font-size: clamp(1.6rem, 4.4cqi, 3rem);
+    font-size: clamp(1.4rem, 3.7cqi, 2.5rem);
     line-height: 1.15;
     margin: 0 0 .7em;
     color: var(--accent);
@@ -284,6 +287,9 @@ const page = (title, frames, dots) => `<!doctype html>
   }
   .card p, .card li { font-size: clamp(.95rem, 1.9cqi, 1.5rem); }
   .card p { margin: 0 0 .8em; }
+  /* {.notitle} hides the slide's title but keeps the # (page break + colour),
+     so a full-bleed image or dense page reclaims the space the title took. */
+  .frame.notitle .card > h1 { display: none; }
   /* Frame marker: add {.indent} to the heading to inset everything below it.
      Topics sit at the base inset; their bullets nest further right. Listed by
      element (not *:not) so the two rules carry equal specificity and the list
@@ -420,16 +426,32 @@ ${frames}
 // stylesheet's --font, and this UI never ships.
 //
 // Candidates are quiet, matter-of-fact sans faces (the ethos: don't call
-// attention to yourself). "System" is the current default.
-const FONT_CHOICES = [
-  ["System (current)", `"Segoe UI", -apple-system, system-ui, sans-serif`],
-  ["Inter", `"Inter", sans-serif`],
-  ["Public Sans", `"Public Sans", sans-serif`],
-  ["Source Sans 3", `"Source Sans 3", sans-serif`],
-  ["IBM Plex Sans", `"IBM Plex Sans", sans-serif`],
-  ["Roboto", `"Roboto", sans-serif`],
-  ["Work Sans", `"Work Sans", sans-serif`],
-  ["Atkinson Hyperlegible", `"Atkinson Hyperlegible", sans-serif`],
+// attention to yourself). "System" is the current default. They're grouped by
+// the three calm neighborhoods of the sans world so the menu itself shows the
+// axis: neutral/grotesque (mechanical, recedes) -> humanist (warm, open, easier
+// long reading) -> geometric (circles & lines, a touch more "designed", still
+// restrained). All within the not-flashy rubric.
+const FONT_GROUPS = [
+  ["Neutral / grotesque", [
+    ["System (current)", `"Segoe UI", -apple-system, system-ui, sans-serif`],
+    ["Inter", `"Inter", sans-serif`],
+    ["Roboto", `"Roboto", sans-serif`],
+    ["Public Sans", `"Public Sans", sans-serif`],
+    ["Work Sans", `"Work Sans", sans-serif`],
+    ["Libre Franklin", `"Libre Franklin", sans-serif`],
+    ["IBM Plex Sans", `"IBM Plex Sans", sans-serif`],
+  ]],
+  ["Humanist / warm", [
+    ["Source Sans 3", `"Source Sans 3", sans-serif`],
+    ["Atkinson Hyperlegible", `"Atkinson Hyperlegible", sans-serif`],
+    ["Fira Sans", `"Fira Sans", sans-serif`],
+    ["Mulish", `"Mulish", sans-serif`],
+    ["Lexend", `"Lexend", sans-serif`],
+  ]],
+  ["Geometric / modern", [
+    ["DM Sans", `"DM Sans", sans-serif`],
+    ["Manrope", `"Manrope", sans-serif`],
+  ]],
 ];
 const googleFonts =
   "https://fonts.googleapis.com/css2?" +
@@ -441,6 +463,12 @@ const googleFonts =
     "Roboto:wght@400;700",
     "Work+Sans:wght@400;700",
     "Atkinson+Hyperlegible:wght@400;700",
+    "Libre+Franklin:wght@400;700",
+    "Fira+Sans:wght@400;700",
+    "Mulish:wght@400;700",
+    "Lexend:wght@400;700",
+    "DM+Sans:wght@400;700",
+    "Manrope:wght@400;700",
   ]
     .map((f) => "family=" + f)
     .join("&") +
@@ -459,8 +487,13 @@ const reloadClient = `<link rel="preconnect" href="https://fonts.googleapis.com"
   }
   #fontpick select { font: inherit; border: 0; background: none; }
 </style>
-<label id="fontpick">Aa&nbsp;<select>${FONT_CHOICES.map(
-  ([n, v]) => `<option value='${v.replace(/'/g, "&#39;")}'>${n}</option>`
+<label id="fontpick">Aa&nbsp;<select>${FONT_GROUPS.map(
+  ([g, opts]) =>
+    `<optgroup label='${g}'>` +
+    opts
+      .map(([n, v]) => `<option value='${v.replace(/'/g, "&#39;")}'>${n}</option>`)
+      .join("") +
+    `</optgroup>`
 ).join("")}</select></label>
 <script>
   // restore scroll position across reloads so you land where you were
