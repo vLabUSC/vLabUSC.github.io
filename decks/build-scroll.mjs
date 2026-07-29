@@ -4,11 +4,14 @@
 // Instead of a paged deck you get one long page where each slide is a 16:9 card
 // that the browser snaps to as you scroll.
 //
-//   node build-scroll.mjs [source.md] [--watch] [--serve]
+//   node build-scroll.mjs [source.md] [--watch] [--serve] [--port=4321]
 //
 // --serve implies --watch and adds a local server with live reload, because a
 // page opened as file:// can't be told to refresh itself. Open the localhost
 // URL it prints; the built file on disk stays clean either way.
+//
+// --port lets a second deck be served alongside the first (one port each), for
+// comparing two drafts in two tabs.
 //
 // Defaults to retreat.md -> ../site/quartz/static/decks/retreat-scroll.html
 
@@ -20,6 +23,7 @@ import { marked } from "marked";
 const args = process.argv.slice(2);
 const serve = args.includes("--serve");
 const watch = serve || args.includes("--watch");
+const port = Number(args.find((a) => a.startsWith("--port="))?.slice(7)) || 4321;
 const source = resolve(args.find((a) => !a.startsWith("--")) ?? "retreat.md");
 const slug = basename(source, ".md");
 const out = resolve(`../site/quartz/static/decks/${slug}-scroll.html`);
@@ -65,42 +69,33 @@ const PASTELS = [
 ];
 
 // Heading level drives the structure:
-//   #   -> an A, a projectable slide
-//   ##  -> a B, a note sheet hanging off the A above it
+//   #   -> a slide, titled at full size
+//   ##  -> a slide, titled one size down — a continuation of the point above it
 //   --- -> a section break: everything after it takes the next pastel
 //   ### and deeper are just content inside whichever frame they're in.
 //
+// Both make an ordinary 16:9 slide the deck snaps to; the heading level only
+// sets how loud the title is. Slides number straight through, 1..n. A page with
+// more on it than a card holds takes {.tall} — see the marker note below.
+//
 // Colour marks a *section of the talk*, not a slide. Consecutive slides run in
-// the same colour until a --- says otherwise. An A can have no B, or several
-// (they run b, c, d...).
+// the same colour until a --- says otherwise.
 function parseFrames(body) {
   const frames = [];
   let section = 0; // colour band
-  let slide = 0; // A counter, runs 1..n across the whole deck
+  let slide = 0; // runs 1..n across the whole deck
   for (const line of body.split(/\r?\n/)) {
     if (/^-{3,}\s*$/.test(line)) {
       section++;
       continue;
     }
-    if (/^#\s+\S/.test(line)) {
+    const heading = /^(#{1,2})\s+\S/.exec(line);
+    if (heading) {
       if (!section) section = 1;
       slide++;
-      frames.push({ kind: "a", section, slide, letter: "a", newSection: true, lines: [line] });
-      // only the first A of a run opens the section, visually
-      const prior = frames.filter((f) => f.kind === "a" && f.section === section);
-      if (prior.length > 1) frames.at(-1).newSection = false;
-    } else if (/^##\s+\S/.test(line)) {
-      if (!section) section = 1;
-      if (!slide) slide = 1; // a B before any A still needs a home
-      const n = frames.filter((f) => f.slide === slide).length;
-      frames.push({
-        kind: "b",
-        section,
-        slide,
-        letter: String.fromCharCode(97 + n),
-        newSection: false,
-        lines: [line],
-      });
+      frames.push({ section, slide, level: heading[1].length, newSection: true, lines: [line] });
+      // only the first slide of a colour run opens the section, visually
+      if (frames.filter((f) => f.section === section).length > 1) frames.at(-1).newSection = false;
     } else if (frames.length) {
       frames.at(-1).lines.push(line);
     }
@@ -125,17 +120,10 @@ function parseFrames(body) {
       classes,
       bg,
       md: resolveEmbeds(f.lines.join("\n").trim()),
-      label: `${f.slide}${f.letter}`,
+      label: String(f.slide),
       color: PASTELS[(f.section - 1) % PASTELS.length],
     };
   });
-  // an A's colour override carries onto its notes, so slide + notes stay bound
-  for (const f of mapped) {
-    if (f.kind === "b" && !f.bg) {
-      const a = mapped.find((x) => x.kind === "a" && x.slide === f.slide);
-      if (a?.bg) f.bg = a.bg;
-    }
-  }
   return mapped;
 }
 
@@ -149,11 +137,10 @@ function build() {
 
   const frames = list
     .map(
-      (f) => `<section class="frame ${f.kind}${f.classes.length ? " " + f.classes.join(" ") : ""}" id="s${f.label}" style="--pastel:${f.bg || f.color}">
+      (f) => `<section class="frame${f.level === 2 ? " sub" : ""}${f.classes.length ? " " + f.classes.join(" ") : ""}" id="s${f.label}" style="--pastel:${f.bg || f.color}">
   <article class="card">
-${f.kind === "b" ? `    <p class="tag">${f.label} — for later</p>` : ""}
 ${marked.parse(f.md).trim()}
-${f.kind === "a" ? `    <span class="num">${f.label}</span>` : ""}
+    <span class="num">${f.label}</span>
   </article>
 </section>`
     )
@@ -162,7 +149,7 @@ ${f.kind === "a" ? `    <span class="num">${f.label}</span>` : ""}
   const dots = list
     .map(
       (f) =>
-        `<a href="#s${f.label}" class="${f.kind}${f.newSection ? " newsec" : ""}" style="--pastel:${f.bg || f.color}" aria-label="Slide ${f.label}"></a>`
+        `<a href="#s${f.label}" class="${f.newSection ? "newsec" : ""}" style="--pastel:${f.bg || f.color}" aria-label="Slide ${f.label}"></a>`
     )
     .join("");
 
@@ -182,8 +169,8 @@ ${f.kind === "a" ? `    <span class="num">${f.label}</span>` : ""}
     "utf8"
   );
 
-  const a = list.filter((f) => f.kind === "a").length;
-  console.log(`${basename(source)} => ${out}  (${a} slides, ${list.length - a} notes)`);
+  const sub = list.filter((f) => f.level === 2).length;
+  console.log(`${basename(source)} => ${out}  (${list.length} slides, ${sub} of them ##)`);
 }
 
 const page = (title, frames, dots) => `<!doctype html>
@@ -215,26 +202,18 @@ const page = (title, frames, dots) => `<!doctype html>
     /* the scroll container: one frame at a time */
     height: 100vh;
     overflow-y: scroll;
-    /* proximity, not mandatory: only the A frames are snap points, so presenting
-       lands A to A. A B is scrolled through, and you can rest inside a long one. */
+    /* proximity, not mandatory: a {.tall} page is longer than the window, so
+       you can rest partway down one instead of being yanked to its edge. */
     scroll-snap-type: y proximity;
   }
+  /* every heading makes one of these: full screen, 16:9, snaps */
   .frame {
     display: grid;
     place-items: center;
     padding: clamp(1rem, 3vh, 2.5rem);
-  }
-  /* A — the projectable slide. Full screen, 16:9, snaps. */
-  .frame.a {
     height: 100vh;
     scroll-snap-align: center;
     padding-bottom: clamp(.5rem, 1.5vh, 1.25rem);
-  }
-  /* B — notes. Sized to its content, never a screenful by decree. Not a snap
-     point, so it doesn't interrupt a run of slides. */
-  .frame.b {
-    padding-top: clamp(.5rem, 1.5vh, 1.25rem);
-    padding-bottom: clamp(3rem, 8vh, 6rem);
   }
   .card {
     position: relative;
@@ -246,37 +225,25 @@ const page = (title, frames, dots) => `<!doctype html>
     display: flex;
     flex-direction: column;
     container-type: inline-size;
-  }
-  .frame.a .card {
     aspect-ratio: 16 / 9;
     max-height: 100%;
     overflow: auto;
     justify-content: center;
   }
-  /* the note sheet: narrower measure, left-aligned, quieter type, no 16:9 */
-  .frame.b .card {
-    width: min(100%, 1280px);
-    padding: clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 4vw, 4rem);
-    box-shadow: 0 10px 24px rgb(0 0 0 / .22);
-    font-size: .95rem;
+  /* Frame marker {.tall} — for a page carrying more than a 16:9 card holds.
+     Drops the fixed height so the card grows to its content and scrolls in the
+     flow of the deck, rather than scrolling inside itself. Still a slide. */
+  .frame.tall {
+    height: auto;
+    scroll-snap-align: start;
+    padding-block: clamp(2rem, 6vh, 4rem);
   }
-  .frame.b .card > * { max-width: 68ch; }
-  .tag {
-    font-size: .7rem !important;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    color: #6b7480;
-    margin: 0 0 1.1em !important;
-    padding-bottom: .5em;
-    border-bottom: 1px solid rgb(0 0 0 / .12);
-    max-width: none !important;
+  .frame.tall .card {
+    aspect-ratio: auto;
+    max-height: none;
+    overflow: visible;
+    justify-content: flex-start;
   }
-  /* B type stays at document scale — these are notes, not projection */
-  .frame.b .card h1 { font-size: 1.35rem; margin-bottom: .6em; }
-  .frame.b .card p,
-  .frame.b .card li { font-size: 1rem; }
-  .frame.b .card li li { font-size: .95em; }
-  .frame.b .card a { color: #0a6e8a; overflow-wrap: anywhere; }
   /* type scales with the card, not the window, so frames stay slide-like */
   .card h1 {
     font-size: clamp(1.4rem, 3.7cqi, 2.5rem);
@@ -285,16 +252,25 @@ const page = (title, frames, dots) => `<!doctype html>
     color: var(--accent);
     font-weight: 700;
   }
+  /* ## — the same title one size down, for a page continuing the point above */
+  .card h2 {
+    font-size: clamp(1.2rem, 3cqi, 2rem);
+    line-height: 1.2;
+    margin: 0 0 .7em;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .card a { color: #0a6e8a; overflow-wrap: anywhere; }
   .card p, .card li { font-size: clamp(.95rem, 1.9cqi, 1.5rem); }
   .card p { margin: 0 0 .8em; }
-  /* {.notitle} hides the slide's title but keeps the # (page break + colour),
-     so a full-bleed image or dense page reclaims the space the title took. */
-  .frame.notitle .card > h1 { display: none; }
+  /* {.notitle} hides the slide's title but keeps the heading (page break +
+     colour), so a full-bleed image or dense page reclaims the space it took. */
+  .frame.notitle .card > h1,
+  .frame.notitle .card > h2 { display: none; }
   /* Frame marker: add {.indent} to the heading to inset everything below it.
      Topics sit at the base inset; their bullets nest further right. Listed by
      element (not *:not) so the two rules carry equal specificity and the list
      inset actually wins on lists. */
-  .frame.indent .card > h2,
   .frame.indent .card > h3,
   .frame.indent .card > h4,
   .frame.indent .card > h5,
@@ -307,21 +283,21 @@ const page = (title, frames, dots) => `<!doctype html>
      Use them to make a line big without it becoming a heading:
        ###  big lead line      ####  medium      #####  small caption
      Normal weight, ink colour, so an inline **bold** still stands out. */
-  .frame.a .card h3 {
+  .card h3 {
     font-size: clamp(1.2rem, 2.9cqi, 2.2rem);
     line-height: 1.25;
     font-weight: 400;
     color: var(--ink);
     margin-block: 0 .5em;
   }
-  .frame.a .card h4 {
+  .card h4 {
     font-size: clamp(1.05rem, 2.3cqi, 1.7rem);
     line-height: 1.3;
     font-weight: 400;
     color: var(--ink);
     margin-block: 0 .5em; /* vertical only — leave margin-left for {.indent} */
   }
-  .frame.a .card h5 {
+  .card h5 {
     font-size: clamp(.9rem, 1.6cqi, 1.2rem);
     font-weight: 400;
     color: #4a5260;
@@ -340,6 +316,19 @@ const page = (title, frames, dots) => `<!doctype html>
   }
   .card strong { color: #101418; }
   .card em { color: #4a5260; }
+  /* tables — usually two columns of parallel points. A browser centres <th> by
+     default, which floats the headings off the left edge their column sits on;
+     these share one alignment so a heading reads as the label for what's under
+     it. Cell type is the same cqi scale as body text, not a fixed 16px. */
+  .card table { border-collapse: collapse; width: 100%; margin: 0 0 .8em; }
+  .card th,
+  .card td {
+    font-size: clamp(.95rem, 1.9cqi, 1.5rem);
+    text-align: left;
+    vertical-align: top;
+    padding: .2em 1.5em .2em 0;
+  }
+  .card th { color: #101418; padding-bottom: .7em; }
   .card img { max-width: 100%; height: auto; }
   .num {
     position: absolute;
@@ -369,12 +358,6 @@ const page = (title, frames, dots) => `<!doctype html>
   /* extra air where the colour changes, so the dots show the sections too */
   nav.dots a.newsec { margin-top: .5rem; }
   nav.dots a.newsec:first-child { margin-top: 0; }
-  /* notes read as a smaller satellite of their slide */
-  nav.dots a.b {
-    width: 5px; height: 5px;
-    margin: -.25rem 0 .45rem 2px;
-    opacity: .6;
-  }
   nav.dots a:hover { transform: scale(1.6); }
   @media (max-width: 900px) {
     .card { aspect-ratio: auto; height: 100%; justify-content: flex-start; }
@@ -392,13 +375,13 @@ const page = (title, frames, dots) => `<!doctype html>
 ${frames}
 <nav class="dots">${dots}</nav>
 <script>
-  // Presenting: arrows / space / PageDown move slide-to-slide, skipping the
-  // notes. Plain scrolling still walks through everything.
-  const slidesA = [...document.querySelectorAll(".frame.a")];
-  const currentA = () => {
+  // Presenting: arrows / space / PageDown move slide to slide. Plain scrolling
+  // still walks through everything.
+  const slides = [...document.querySelectorAll(".frame")];
+  const current = () => {
     const mid = scrollY + innerHeight / 2;
     let best = 0;
-    slidesA.forEach((el, i) => {
+    slides.forEach((el, i) => {
       if (el.offsetTop <= mid) best = i;
     });
     return best;
@@ -408,11 +391,11 @@ ${frames}
     const back = ["ArrowLeft", "PageUp"].includes(e.key);
     if (!fwd && !back) return;
     e.preventDefault();
-    const i = currentA();
-    // parked in a slide's notes? back should return to that slide, not the one before
-    const parked = scrollY > slidesA[i].offsetTop + innerHeight / 2;
+    const i = current();
+    // parked partway down a {.tall} page? back returns to its top, not the one before
+    const parked = scrollY > slides[i].offsetTop + innerHeight / 2;
     const next = fwd ? i + 1 : parked ? i : i - 1;
-    slidesA[Math.max(0, Math.min(slidesA.length - 1, next))]
+    slides[Math.max(0, Math.min(slides.length - 1, next))]
       .scrollIntoView({ behavior: "smooth", block: "center" });
   });
 </script>
@@ -528,7 +511,6 @@ if (watch) {
 }
 
 if (serve) {
-  const port = 4321;
   createServer((req, res) => {
     if (req.url === "/__reload") {
       res.writeHead(200, {

@@ -4,25 +4,50 @@ theme: default
 paginate: true
 publish: false
 ---
+## My Theory {.tall}
 
-# Peter Did AI During His Sabbatical (Jan to Now)
 
-I personally upgraded from: 
-- Conversing with AI in the browser to....
-- Working with agents in a persistent workspace
+If I don't craft an overt and working ai practice, it will craft me.  Currently, I'm putting my ai in a transparent place.  It's not magic.  I'm on the quest to write a philosophy for myself.  How I'm in control of the ai, my own mind.  This is the fundamentals on the task of not being replaced by ai.  
+This transparency goal is the precondition to being inventive in the future.  
+Screenshot of browser chatting; "I find this experience to be opaque.  I don't feel in control."
+Finding the right philosophy for me and my students, I'm uncertain that assessing through the output is the way.  
+And using browser chat for a stretch - I suspect I'm becoming less imaginative.  Such ai is a stage after true tortoise mind.  I think the best ideas will still happen when the human mind is disconnected from ai.  And the ability to disconnect depends on how I use it (am connected); this workspace approach makes that possible.  
 
+
+----
+
+# Peter AI-Upgraded During His Sabbatical  {bg:#000000}
+-----
+
+
+## <span style="color:#999999">Conversing With AI in the Browser </span> {bg:#000000}
+<br><br>
+
+
+<p style="text-align:center">![[ChatGPT_Chat.png|800]]</p>
+
+## <span style="color:#999999">Working With Agents in a Persistent Workspace</span>  {bg:#100e17}
+
+<p style="text-align:center;max-width:none">![[ObsidianWide.png|650]]</p>
+
+<p style="text-align:center;max-width:none;margin-bottom:0">![[ClaudeCode_type.png|650]]</p>
+# The Three Surfaces {bg:#100e17}
+
+<p style="text-align:center;max-width:none;margin-bottom:0">![[claude_chat_cowork.png|500]] ![[claude_code.png|500]]</p>
 
 -----
 # Established Uses
 
-- Agents and Workspaces.  For Coding/Software Development.  
 - Generative AI
+- Coding/Software Development
+
 ----
 
 # Guiding Question
 
 ### *When I use AI, am I thinking more or less?*
-*(About what matters)*
+<br><br>
+*About what matters -> New ideas and solutions*
 
 
 
@@ -39,13 +64,13 @@ I personally upgraded from:
 - Best Practices
 
 
-## Peter's Takes (Details)
+## Peter's Takes (Details) {.tall}
 
 - USC Accounts 
 	- Have privacy but weak model "effort" options
 	- Can't do CLI's - *agents in a persistent workspace* - that I'm arguing for in this slideshow
-- LLM's Have Compute Levels, "effort".  Constructively toggling among them is a learned skill
-	![[ClaudeModels.png|200]]![[ClaudeEfforts.png|200]]![[CodexModels.png|200]]
+- LLM's Have Compute Levels, "effort".  Constructively toggling among them is a learned skill<br>
+	![[ClaudeModels.png|270]]&nbsp;&nbsp;&nbsp;&nbsp;![[ClaudeEfforts.png|330]]&nbsp;&nbsp;&nbsp;&nbsp;![[CodexModels.png|400]]
 - U.S. Frontier Models
 	- Claude and Codex are peers.  Gemini is right there with them
 	- Their "CLI's" are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)
@@ -94,22 +119,31 @@ I personally upgraded from:
 
 
 
-# In The Browser
-
+# Providing Context in the Chat 
 ![[PromptExample.png|900]]
+
 <br>
 
-### Instead of this kind of prompt, provide ~500 documents.  
-(Loaded intelligently). 
+#### It also has memory, but it's hidden on their servers. 
+
+# Instead of this kind of prompt, provide many documents, perhaps hundreds.  
+
+- Loaded intelligently
+- Any memories are readable and writeable
+
+
+
 
 -----
+# My Project: Peter's Office Hours
+
 # Converted My Slides to a Wiki (Web) {bg:#100e17}
 
-![[webGETscreenshot.png|860]]
+![[webGETscreenshot.png|800]]
 
 # A Corpus of Markdown Files {bg:#100e17}
 
-![[obsidianScreenshot1.png|850]]!
+![[obsidianScreenshot1.png|800]]!
 
 # Maintained on GitHub {bg:#100e17}
 
@@ -121,6 +155,10 @@ I personally upgraded from:
 # In Context Learning {bg:#00000}
 ![[LLMtoICL.png|950]]
 
+
+<br>
+
+### <span style="color:#ffffff">Sharable</span> 
 
 
 
@@ -170,6 +208,8 @@ I personally upgraded from:
 
 
 ---
+# Pushed to GitHub 
+
 # Subsequent Conversation With Peter
 
 - Focused on ideas and unknowns
@@ -204,3 +244,12 @@ I personally upgraded from:
   
 - Let's embrace experimental features
 
+# Land the Plane, Peter
+
+<br>
+
+### In my class, they will ***branch*** Peter's Office Hours into their own version - that teams shape towards their wants and needs.  At minimum, this 
+
+<br><br>
+
+### For large teams all design and development documents, meeting notes, research, examples, build iteration details, playtest notes, calendars, and difference of opinions are in their LLM's head, ready to access.  And all of that ***context and memory*** is readable and writable - to the humans - in a central, shared place.  
