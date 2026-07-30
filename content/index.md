@@ -17,4 +17,4 @@ publish: true
 
 </div>
 
-[**GDOH**](https://vlabusc.github.io/The-GET/) — GDOH (Game Design Office Hours) maps an early idea for a playable story or world, outlining what is known, what questions remain, and how the prototype might be built in a game engine.
+[**GDOH**](https://gdofficehours.github.io/GDOH/) — GDOH (Game Design Office Hours) maps an early idea for a playable story or world, outlining what is known, what questions remain, and how the prototype might be built in a game engine.
