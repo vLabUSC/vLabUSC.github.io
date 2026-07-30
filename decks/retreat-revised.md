@@ -131,7 +131,7 @@ publish: false
 
 <br>
 
-### Claude, ChatGPT, etc are black boxes we can't train.  
+### Claude, ChatGPT, etc are black boxes we can't train or read.  
 <br>
 
 ### *What if you could shape an LLM around your needs, refine it over time, and share it with others?*
