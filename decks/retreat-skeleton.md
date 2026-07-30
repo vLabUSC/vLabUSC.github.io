@@ -6,11 +6,11 @@ publish: false
 ---
 # Keep Your AI Where I Can See It 
 
-# The Guiding Question
+# My Guiding Question
 
 ### *When I use AI, am I thinking more or less?*
 
-# Browser chat is opaque, making it easy to hand our thinking over to the LLM.{bg:#000000}
+# Browser chat is opaque, making it easy to hand our thinking over to the LLM.{bg:#333333}
 
 <p style="text-align:center">![[ChatGPT_Chat.png|800]]</p>
 
@@ -41,6 +41,7 @@ publish: false
 ### Claude, ChatGPT, etc are black boxes we can't train or read.  
 <br>
 
+
 ### *What if you could shape an LLM around your needs, refine it over time, and share it with others?*<br><br>
 
 
@@ -48,31 +49,28 @@ publish: false
 
 
 ---
-# Codex and Claude Code Work Inside Your Workspace {.image-right bg:#100e17}
+# Codex and Claude Code Are Inside Your Workspace {.image-right bg:#100e17}
 
 <p>![[perforce1.png|420]]</p>
 
 ### “Workspace” already means something to us:
 
 - A local Unity or Unreal project
-- Connected to the team’s shared Perforce depot
-- Persistent between work sessions
-- Made of files the team can inspect and change
+- Persistent between work sessions, and collaborators
 
-# Today's Software Practice
+
+# Frontier Labs' Focus
 
 ####  Software Teams Add Agents Inside Their Workspace
 
 
 
 ## I’m using agents in a persistent workspace, but for knowledge work {bg:#100e17}
+<br>
+<p>![[ObsidianWide.png|900]]</p>
 
-<p>![[ObsidianWide.png|850]]</p>
 
 
-
-<br><br><br>
-## Sounds like  google docs....
 
 ## The LLM and I have the same connection to the content.  
 
@@ -130,25 +128,30 @@ publish: false
 - **Unreal** — tutorials and a practical wiki
 - **References** — curated game and film examples
 - **Examples** —  of productive conversations
-- **Instructions** — how to speak with the student
+- ***Instructions*** — how to speak with the student (i.e. refuses to generate ideas)
 
 <br>
 
 ### The system is LLM-agnostic.
 
+# Instructions  {bg:#000000} 
 
-# Before Students Prototype
+![[GDOH_Instructions.png|1000]]
 
-- Asks students to clarify the idea
-- Discusses the idea the way I do
-- Identifies unknowns before production begins
-- Connects the idea to course concepts and practical resources
-- Returns a document for the students and instructor
+
+----
+# Before The Prototype - A 10 Minute Conversation
+
+- Clarify the idea
+- Discusses the way Peter does
+- Surfaces unknown unknowns 
+- Connects to course material 
+- Returns a document for us
 
 
 ---
 
-## The Students Leave With a Reviewable Artifact {bg:#100e17}
+## Concludes With a Reviewable Artifact {bg:#100e17}
 
 ![[projectOutputExample0.png|760]]
 
@@ -215,7 +218,7 @@ publish: false
 ---
 
 
-# Land the Plane, Peter
+# Next Step, Peter
 
 <br>
 
