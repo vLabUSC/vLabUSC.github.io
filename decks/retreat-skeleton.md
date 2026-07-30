@@ -6,6 +6,18 @@ publish: false
 ---
 # Keep Your AI Where I Can See It 
 
+<br><br><br><br><br><br><br><br><br><br>
+
+ Emerging Practices of Working with AI
+
+# Peter's Takes - Appendix B
+
+- USC Accounts
+- Frontier vs Chinese LLMs
+- LLM Settings - Model; Effort
+- Perplexity
+- Best Practices
+
 # My Guiding Question
 
 ### *When I use AI, am I thinking more or less?*
@@ -227,3 +239,53 @@ publish: false
 <br><br>
 
 ### For teams all design and development documents, meeting notes, research, examples, build iteration details, playtest notes, calendars, and difference of opinions are in their LLM's head, ready to access.  And all of that ***context and memory*** is readable and writable - to the humans - in a central, shared place.  
+
+
+
+
+
+# Appendix A: Browser Chat vs Persistent Workspace {.tall}
+
+| Browser chat | Persistent workspace |
+|---|---|
+| Produces an answer | Produces durable work |
+| Context is supplied temporarily | Context persists in project files |
+| Memory is largely service-controlled | Project memory can live in team-controlled files |
+| Suggests what someone might do | Reads, writes, uses tools, and checks its work |
+| Share a transcript | Share files, diffs, and review |
+| Improve the prompt | Improve the corpus, instructions, and workflow |
+| Conversation history | Version history |
+
+
+
+
+<br>
+
+
+
+# Appendix B: Peter's Takes (Details) {.tall}
+
+- USC Accounts 
+	- Have privacy but weak model "effort" options
+	- Can't do CLI's - *agents in a persistent workspace* - that I'm arguing for in this slideshow
+- LLM's Have Compute Levels, "effort".  Productively toggling among them is a learned skill<br>
+	![[ClaudeModels.png|270]]&nbsp;&nbsp;&nbsp;&nbsp;![[ClaudeEfforts.png|330]]&nbsp;&nbsp;&nbsp;&nbsp;![[CodexModels.png|400]]
+- U.S. Frontier Models
+	- Claude and Codex are peers.  Gemini is right there with them
+	- Their "CLI's" are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)
+	- Peter pays for - Claude, Codex, Gemini, Perplexity, Deepseek (per token)
+	- Get to know Claude's "Plan Mode"
+	- Google:  Google search, AI Mode, and Gemini are not the same thing
+- Chinese LLM's. ***Our Chinese students use these.*** 
+	- Deepseek, Qwan, Kimi, etc compete with U.S. models and are cheap.  
+	- Often can be downloaded for privacy and control.  So can Meta's (Llama).
+- Perplexity 
+	- Handy for researching AI itself
+	- Broader search too: $20/month for best alternative - ever - to Google search
+- Popular - Obsidian, VS Code, Github
+- Tokens and Context - learn how to conserve 
+- Ask your LLM to response with an html page - easier to read helps Guiding Question, above
+
+
+
+
