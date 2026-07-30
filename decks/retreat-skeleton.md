@@ -4,8 +4,11 @@ theme: default
 paginate: true
 publish: false
 ---
-# Keep My AI Where I Can See It 
+# Keep Your AI Where I Can See It 
 
+# The Guiding Question
+
+### *When I use AI, am I thinking more or less?*
 
 # Browser chat is opaque, making it easy to hand our thinking over to the LLM.{bg:#000000}
 
@@ -20,44 +23,6 @@ publish: false
 <p style="text-align:center;max-width:none;margin-bottom:0">![[claude_chat_cowork.png|500]] ![[claude_code.png|500]]</p>
 
 
-
-
-
-
-
-
-
-
-
----
-# "Workspace" For Us
-
-#### Your video game project - locally
-
-
-# Today's Software Practice
-
-####  Software Teams Add Agents Inside Their Workspace
-
-
-
-## I’m using agents in a persistent workspace, but for knowledge work {bg:#100e17}
-
-<p>![[ObsidianWide.png|900]]</p>
-
-
-
----
-
-## GitHub makes that thinking versioned, shareable, and open to collaboration.
-## We've Been Doing Shared Persistant Workspaces Forever {.image-right bg:#100e17}
-
-<p>![[perforce1.png|420]]</p>
-
-<br><br><br>
-## Sounds like  google docs....
-
-## The LLM and I have the same connection to the content.
 
 
 
@@ -77,22 +42,72 @@ publish: false
 <br>
 
 ### *What if you could shape an LLM around your needs, refine it over time, and share it with others?*<br><br>
-#### A transparent practice helps decide when to invite AI into the work — and when to turn it off.
+
+
+
+
+
+---
+# Codex and Claude Code Work Inside Your Workspace {.image-right bg:#100e17}
+
+<p>![[perforce1.png|420]]</p>
+
+### “Workspace” already means something to us:
+
+- A local Unity or Unreal project
+- Connected to the team’s shared Perforce depot
+- Persistent between work sessions
+- Made of files the team can inspect and change
+
+# Today's Software Practice
+
+####  Software Teams Add Agents Inside Their Workspace
+
+
+
+## I’m using agents in a persistent workspace, but for knowledge work {bg:#100e17}
+
+<p>![[ObsidianWide.png|850]]</p>
+
+
+
+<br><br><br>
+## Sounds like  google docs....
+
+## The LLM and I have the same connection to the content.  
+
+
+# The Guiding Question
+
+### *When I use AI, am I thinking more or less?*
 
 <br><br>
-#### Because our best ideas happen when our the minds are disconnected from AI.
+
+#### About what matters:
+
+- New ideas
+- Meaningful choices
+- Interpretation and uncertainty
+- Creative conviction - our best ideas happen when our minds are disconnected from AI.
+
+<br>
+
+<br><br>
+#### 
 
 ---
 
 # GD Office Hours is my working example.
 
 
-# I Converted My Slides Into a Wiki {bg:#100e17}
-
-![[webGETscreenshot.png|800]]
+## I Converted My Slides, Notes, Lessons, and Assignments Into a Wiki {bg:#100e17}
 
 
-# A Corpus of Markdown Files {bg:#100e17}
+
+![[web-gdoh-screenshot.png|800]]
+
+
+# A Corpus (Workspace) of Markdown Files {bg:#100e17}
 
 ![[obsidianScreenshot1.png|800]]!
 
@@ -109,7 +124,7 @@ publish: false
 
 ---
 
-# Peter's Office Hours Has Five Parts
+# GDOH Has Five Parts
 
 - **Course content** — storytelling and worldbuilding concepts, terms, definitions, and explanations
 - **Unreal** — tutorials and a practical wiki
@@ -158,9 +173,6 @@ publish: false
 
 
 
-
-# Pushed to GitHub 
-
 # Subsequent Conversation With Peter
 
 - The discussion focused on ideas and unknowns
@@ -178,10 +190,37 @@ publish: false
 
 ### Game engines are changing.
 
+
+# Unity
+
+- Command line does a ton 
+- In terms of AI integration, it is ahead
+- Unity games can be islands in Fortnite
+
+# Unreal 6.0
+
+- Rolling out 2027 - 2029.  
+- Blueprints scripting is going away
+- Verse is the new language
+- "Entities" (things in the scene) will be defined differently
+  
+- Let's embrace experimental features
+
+
 ---
 
-# With game engines changing, faculty and student teams need shared knowledge systems they can maintain together.
+## Back To The Topic - The Value of Persistent, Shared, Knowledge Workspaces
 
+- Starting next year, there will be a lot of us learning Unreal 6.0 in parallel
 ---
 
-# Students can inherit, branch, and reshape the practice—not merely receive access to a bot.
+
+# Land the Plane, Peter
+
+<br>
+
+### In my class, they will ***branch*** GD Office Hours into their own version - that teams shape towards their wants and needs.  
+
+<br><br>
+
+### For teams all design and development documents, meeting notes, research, examples, build iteration details, playtest notes, calendars, and difference of opinions are in their LLM's head, ready to access.  And all of that ***context and memory*** is readable and writable - to the humans - in a central, shared place.  
