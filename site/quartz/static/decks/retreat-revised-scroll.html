@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>If I Don't Craft My AI Practice, AI Will Craft Me {bg:#000000}</title>
+<title>Putting AI Where I Can See It {bg:#000000}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
@@ -30,6 +30,14 @@
     /* proximity, not mandatory: a {.tall} page is longer than the window, so
        you can rest partway down one instead of being yanked to its edge. */
     scroll-snap-type: y proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body::-webkit-scrollbar,
+  .card::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
   }
   /* every heading makes one of these: full screen, 16:9, snaps */
   .frame {
@@ -53,7 +61,85 @@
     aspect-ratio: 16 / 9;
     max-height: 100%;
     overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     justify-content: center;
+  }
+  .frame.dark .card {
+    --ink: #f2f4f8;
+    --muted: #aeb7c4;
+    --accent: #16c4e3;
+    color: var(--ink);
+  }
+  .frame.dark .card strong,
+  .frame.dark .card th { color: #ffffff; }
+  .frame.dark .card em,
+  .frame.dark .card h5,
+  .frame.dark .card blockquote { color: #cbd3dd; }
+  .frame.dark .card a { color: #62dcf2; }
+  /* Two-column frame marker: image on the left, explanatory copy on the right. */
+  .frame.twocol .card {
+    display: grid;
+    grid-template-columns: minmax(0, .56fr) minmax(300px, .44fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: clamp(1.25rem, 3cqi, 2.5rem);
+    align-items: start;
+    justify-content: stretch;
+  }
+  .frame.twocol .card > h1,
+  .frame.twocol .card > h2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .frame.twocol .card > p:first-of-type {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    align-self: center;
+    margin: 0;
+  }
+  .frame.twocol .card > h3,
+  .frame.twocol .card > h4 {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+  }
+  .frame.twocol .card > ul,
+  .frame.twocol .card > ol {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+  }
+  /* Image-right variant: every piece of copy, including the title, stays left. */
+  .frame.image-right .card {
+    display: grid;
+    grid-template-columns: minmax(0, .62fr) minmax(240px, .38fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: clamp(1.5rem, 4cqi, 3.5rem);
+    align-items: start;
+    justify-content: stretch;
+  }
+  .frame.image-right .card > h1,
+  .frame.image-right .card > h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .frame.image-right .card > h3,
+  .frame.image-right .card > h4 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+  }
+  .frame.image-right .card > ul,
+  .frame.image-right .card > ol {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: start;
+  }
+  .frame.image-right .card > p:first-of-type {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: center;
+    margin: 0;
   }
   /* Frame marker {.tall} — for a page carrying more than a 16:9 card holds.
      Drops the fixed height so the card grows to its content and scrolls in the
@@ -197,13 +283,13 @@
 </style>
 </head>
 <body>
-<section class="frame" id="s1" style="--pastel:#000000">
+<section class="frame dark" id="s1" style="--pastel:#000000">
   <article class="card">
-<h1>If I Don&#39;t Craft My AI Practice, AI Will Craft Me</h1>
+<h1>Putting AI Where I Can See It</h1>
     <span class="num">1</span>
   </article>
 </section>
-<section class="frame sub" id="s2" style="--pastel:#000000">
+<section class="frame sub dark" id="s2" style="--pastel:#000000">
   <article class="card">
 <h2>Browser Chat Feels Intelligent — but Opaque</h2>
 <br>
@@ -212,58 +298,94 @@
     <span class="num">2</span>
   </article>
 </section>
-<section class="frame sub" id="s3" style="--pastel:#100e17">
+<section class="frame sub image-right dark" id="s3" style="--pastel:#100e17">
   <article class="card">
-<h2>A Workspace Makes the Practice Visible</h2>
-<p style="text-align:center;max-width:none"><img src="/attachments/ObsidianWide.png" style="width:50.78cqw" alt=""></p>
+<h2>We Already Know How to Work This Way</h2>
+<p><img src="/attachments/perforce1.png" style="width:32.81cqw" alt=""></p>
 
-<p style="text-align:center;max-width:none;margin-bottom:0"><img src="/attachments/ClaudeCode_type.png" style="width:50.78cqw" alt=""></p>
-
-<br>
-
-<h4><span style="color:#ffffff">Sources, instructions, memory, and outputs live where I can inspect them.</span></h4>
+<h3>For years, our Unity and Unreal teams have worked in shared, versioned project workspaces.</h3>
+<ul>
+<li>The project consists of files</li>
+<li>Each teammate has a local workspace</li>
+<li>Perforce maintains the shared depot and history</li>
+<li>The team submits, reviews, and integrates changes</li>
+</ul>
     <span class="num">3</span>
   </article>
 </section>
-<section class="frame" id="s4" style="--pastel:#f8dcd6">
+<section class="frame sub dark" id="s4" style="--pastel:#100e17">
   <article class="card">
-<h1>Shared Clarity</h1>
-<table>
-<thead>
-<tr>
-<th>Browser chat</th>
-<th>Persistent workspace</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Produces an answer</td>
-<td>Produces an artifact</td>
-</tr>
-<tr>
-<td>Context is supplied temporarily</td>
-<td>Context persists in files</td>
-</tr>
-<tr>
-<td>Memory is largely hidden</td>
-<td>Project memory is inspectable</td>
-</tr>
-<tr>
-<td>Share a transcript</td>
-<td>Review and revise the work</td>
-</tr>
-<tr>
-<td>Improve the prompt</td>
-<td>Improve the corpus, instructions, and workflow</td>
-</tr>
-<tr>
-<td>One person talks to AI</td>
-<td>A team works through shared material</td>
-</tr>
-</tbody></table>
+<h2>Software Teams Added Agents Inside That Workspace</h2>
+<p style="text-align:center;max-width:none;margin-bottom:0"><img src="/attachments/ClaudeCode_type.png" style="width:66.41cqw" alt=""></p>
+
+<h3></h3>
     <span class="num">4</span>
   </article>
 </section>
-<section class="frame" id="s5" style="--pastel:#d8ebe6">
+<section class="frame sub twocol dark" id="s5" style="--pastel:#100e17">
+  <article class="card">
+<h2>Now Apply the Same Pattern to Knowledge</h2>
+<p><img src="/attachments/ObsidianWide.png" style="width:70.31cqw" alt=""></p>
+
+<h3>My Obsidian vault is a project made of readable Markdown files.</h3>
+<ul>
+<li>The agent and I work in the same files</li>
+<li>GitHub records and shares every change</li>
+<li>Other people can branch, review, and contribute</li>
+<li>The corpus remains portable and LLM-agnostic</li>
+</ul>
+    <span class="num">5</span>
+  </article>
+</section>
+<section class="frame sub" id="s6" style="--pastel:#f8dcd6">
+  <article class="card">
+<h2>The collaborative practice of software projects applied to knowledge.</h2>
+<table>
+<thead>
+<tr>
+<th>Game/software production</th>
+<th>Knowledge production</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Unity or Unreal project</td>
+<td>Obsidian vault</td>
+</tr>
+<tr>
+<td>Code, assets, and configuration</td>
+<td>Notes, research, tutorials, and examples</td>
+</tr>
+<tr>
+<td>Local Perforce workspace</td>
+<td>Local vault or Git working copy</td>
+</tr>
+<tr>
+<td>Shared Perforce depot</td>
+<td>Shared GitHub repository</td>
+</tr>
+<tr>
+<td>Changelist and review</td>
+<td>Commit, diff, and review</td>
+</tr>
+</tbody></table>
+<h5>Appendix A: Browser chat and persistent workspaces compared</h5>
+    <span class="num">6</span>
+  </article>
+</section>
+<section class="frame" id="s7" style="--pastel:#d8ebe6">
+  <article class="card">
+<h1>Peter&#39;s Takes - Talk To Me</h1>
+<ul>
+<li>USC Accounts</li>
+<li>Frontier vs Chinese LLMs</li>
+<li>LLM Settings - Model; Effort</li>
+<li>Perplexity</li>
+<li>Best Practices</li>
+</ul>
+    <span class="num">7</span>
+  </article>
+</section>
+<section class="frame" id="s8" style="--pastel:#d8ebe6">
   <article class="card">
 <h1>The Guiding Question</h1>
 <h3><em>When I use AI, am I thinking more or less?</em></h3>
@@ -275,78 +397,31 @@
 <li>Interpretation and uncertainty</li>
 <li>Creative conviction</li>
 </ul>
-    <span class="num">5</span>
+<p><br><br></p>
+<h4>See Appendix B For Details</h4>
+    <span class="num">8</span>
   </article>
 </section>
-<section class="frame" id="s6" style="--pastel:#d8ebe6">
-  <article class="card">
-<h1>Peter&#39;s Takes</h1>
-<ul>
-<li>USC Accounts</li>
-<li>Frontier vs Chinese LLMs</li>
-<li>Model Settings</li>
-<li>Perplexity</li>
-<li>Best Practices</li>
-</ul>
-    <span class="num">6</span>
-  </article>
-</section>
-<section class="frame sub tall" id="s7" style="--pastel:#d8ebe6">
-  <article class="card">
-<h2>Peter&#39;s Takes (Details)</h2>
-<ul>
-<li>USC Accounts <ul>
-<li>Have privacy but weak model &quot;effort&quot; options</li>
-<li>Can&#39;t do CLI&#39;s - <em>agents in a persistent workspace</em> - that I&#39;m arguing for in this slideshow</li>
-</ul>
-</li>
-<li>LLM&#39;s Have Compute Levels, &quot;effort&quot;.  Constructively toggling among them is a learned skill<br>
-  <img src="/attachments/ClaudeModels.png" style="width:21.09cqw" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/attachments/ClaudeEfforts.png" style="width:25.78cqw" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/attachments/CodexModels.png" style="width:31.25cqw" alt=""></li>
-<li>U.S. Frontier Models<ul>
-<li>Claude and Codex are peers.  Gemini is right there with them</li>
-<li>Their &quot;CLI&#39;s&quot; are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)</li>
-<li>Peter pays for - Claude, Codex, Gemini, Perplexity, Deepseek (per token)</li>
-<li>Get to know Claude&#39;s &quot;Plan Mode&quot;</li>
-<li>Google:  Google search, AI Mode, and Gemini are not the same thing</li>
-</ul>
-</li>
-<li>Chinese LLM&#39;s. <em><strong>Our Chinese students use these.</strong></em> <ul>
-<li>Deepseek, Qwan, Kimi, etc (in the browser) compete with U.S. models and are cheap.  </li>
-<li>Often can be downloaded for privacy and control.  So can Meta&#39;s (Llama).</li>
-</ul>
-</li>
-<li>Perplexity <ul>
-<li>To research AI itself</li>
-<li>Broader search too: $20/month for best alternative - ever - to Google search</li>
-</ul>
-</li>
-<li>Popular - Obsidian, VS Code, Github</li>
-<li>Tokens and Context - learn how to conserve </li>
-<li>Ask your LLM to response with an html page - easier to read helps Guiding Question, above</li>
-</ul>
-    <span class="num">7</span>
-  </article>
-</section>
-<section class="frame notitle" id="s8" style="--pastel:#aaaaaa">
+<section class="frame notitle" id="s9" style="--pastel:#aaaaaa">
   <article class="card">
 <h1>No Title</h1>
 <h3>Our best ideas happen when our the minds are disconnected from AI.</h3>
 <p><br><br></p>
 <h3>A transparent practice helps decide when to invite AI into the work — and when to turn it off.</h3>
-    <span class="num">8</span>
+    <span class="num">9</span>
   </article>
 </section>
-<section class="frame" id="s9" style="--pastel:#e7dcf3">
+<section class="frame" id="s10" style="--pastel:#e7dcf3">
   <article class="card">
 <h1>Ok, You Know the Two Big Uses</h1>
 <ul>
 <li>Generative AI</li>
 <li>Coding and software development</li>
 </ul>
-    <span class="num">9</span>
+    <span class="num">10</span>
   </article>
 </section>
-<section class="frame" id="s10" style="--pastel:#e7dcf3">
+<section class="frame" id="s11" style="--pastel:#e7dcf3">
   <article class="card">
 <h1>The Third Use Is Knowledge Work</h1>
 <ul>
@@ -358,17 +433,17 @@
 <li>Shared bodies of teaching knowledge</li>
 </ul>
 <br>
-    <span class="num">10</span>
-  </article>
-</section>
-<section class="frame" id="s11" style="--pastel:#100e17">
-  <article class="card">
-<h1>Three Surfaces</h1>
-<p style="text-align:center;max-width:none;margin-bottom:0"><img src="/attachments/claude_chat_cowork.png" style="width:39.06cqw" alt=""> <img src="/attachments/claude_code.png" style="width:39.06cqw" alt=""></p>
     <span class="num">11</span>
   </article>
 </section>
-<section class="frame" id="s12" style="--pastel:#f9ecc9">
+<section class="frame dark" id="s12" style="--pastel:#100e17">
+  <article class="card">
+<h1>Three Surfaces</h1>
+<p style="text-align:center;max-width:none;margin-bottom:0"><img src="/attachments/claude_chat_cowork.png" style="width:39.06cqw" alt=""> <img src="/attachments/claude_code.png" style="width:39.06cqw" alt=""></p>
+    <span class="num">12</span>
+  </article>
+</section>
+<section class="frame" id="s13" style="--pastel:#f9ecc9">
   <article class="card">
 <h1>To What End?</h1>
 <br>
@@ -377,10 +452,10 @@
 <br>
 
 <h3><em>What if you could shape an LLM around your needs, refine it over time, and share it with others?</em></h3>
-    <span class="num">12</span>
+    <span class="num">13</span>
   </article>
 </section>
-<section class="frame sub" id="s13" style="--pastel:#f9ecc9">
+<section class="frame sub" id="s14" style="--pastel:#f9ecc9">
   <article class="card">
 <h2>Chat Requires Context to Be Rebuilt</h2>
 <img src="/attachments/PromptExample.png" style="width:70.31cqw" alt="">
@@ -388,45 +463,45 @@
 <br>
 
 <h3>It also has memory, but it&#39;s hidden on their servers.</h3>
-    <span class="num">13</span>
-  </article>
-</section>
-<section class="frame" id="s14" style="--pastel:#d9e7f5">
-  <article class="card">
-<h1>My Project: Peter&#39;s Office Hours</h1>
-<h3>Shape LLM&#39;s around the way I teach?</h3>
     <span class="num">14</span>
   </article>
 </section>
-<section class="frame" id="s15" style="--pastel:#100e17">
+<section class="frame" id="s15" style="--pastel:#d9e7f5">
   <article class="card">
-<h1>I Converted My Slides Into a Wiki</h1>
-<img src="/attachments/webGETscreenshot.png" style="width:62.50cqw" alt="">
+<h1>My Project: Peter&#39;s Office Hours</h1>
+<h3>Shape LLM&#39;s around the way I teach?</h3>
     <span class="num">15</span>
   </article>
 </section>
-<section class="frame" id="s16" style="--pastel:#100e17">
+<section class="frame dark" id="s16" style="--pastel:#100e17">
   <article class="card">
-<h1>A Corpus of Markdown Files</h1>
-<p><img src="/attachments/obsidianScreenshot1.png" style="width:62.50cqw" alt="">!</p>
+<h1>I Converted My Slides Into a Wiki</h1>
+<img src="/attachments/webGETscreenshot.png" style="width:62.50cqw" alt="">
     <span class="num">16</span>
   </article>
 </section>
-<section class="frame" id="s17" style="--pastel:#100e17">
+<section class="frame dark" id="s17" style="--pastel:#100e17">
   <article class="card">
-<h1>GitHub Makes the Corpus Versioned and Shareable</h1>
-<img src="/attachments/obsidianScreenshot2.png" style="width:66.41cqw" alt="">
+<h1>A Corpus of Markdown Files</h1>
+<p><img src="/attachments/obsidianScreenshot1.png" style="width:62.50cqw" alt="">!</p>
     <span class="num">17</span>
   </article>
 </section>
-<section class="frame" id="s18" style="--pastel:#00000">
+<section class="frame dark" id="s18" style="--pastel:#100e17">
   <article class="card">
-<h1>In Context Learning</h1>
-<img src="/attachments/LLMtoICL.png" style="width:74.22cqw" alt="">
+<h1>GitHub Makes the Corpus Versioned and Shareable</h1>
+<img src="/attachments/obsidianScreenshot2.png" style="width:66.41cqw" alt="">
     <span class="num">18</span>
   </article>
 </section>
-<section class="frame" id="s19" style="--pastel:#e3ecd0">
+<section class="frame dark" id="s19" style="--pastel:#000000">
+  <article class="card">
+<h1>In Context Learning</h1>
+<img src="/attachments/LLMtoICL.png" style="width:74.22cqw" alt="">
+    <span class="num">19</span>
+  </article>
+</section>
+<section class="frame" id="s20" style="--pastel:#e3ecd0">
   <article class="card">
 <h1>Peter&#39;s Office Hours Has Five Parts</h1>
 <ul>
@@ -439,10 +514,10 @@
 <br>
 
 <h3>The system is LLM-agnostic.</h3>
-    <span class="num">19</span>
+    <span class="num">20</span>
   </article>
 </section>
-<section class="frame" id="s20" style="--pastel:#e3ecd0">
+<section class="frame" id="s21" style="--pastel:#e3ecd0">
   <article class="card">
 <h1>Before Students Prototype</h1>
 <ul>
@@ -452,44 +527,44 @@
 <li>Connects the idea to course concepts and practical resources</li>
 <li>Returns a document for the students and instructor</li>
 </ul>
-    <span class="num">20</span>
-  </article>
-</section>
-<section class="frame sub" id="s21" style="--pastel:#100e17">
-  <article class="card">
-<h2>The Students Leave With a Reviewable Artifact</h2>
-<img src="/attachments/projectOutputExample0.png" style="width:59.38cqw" alt="">
     <span class="num">21</span>
   </article>
 </section>
-<section class="frame sub" id="s22" style="--pastel:#100e17">
+<section class="frame sub dark" id="s22" style="--pastel:#100e17">
   <article class="card">
-<h2>Asks Questions.  Cautious with Suggestions.</h2>
-<img src="/attachments/projectOutputExample.png" style="width:56.25cqw" alt="">
+<h2>The Students Leave With a Reviewable Artifact</h2>
+<img src="/attachments/projectOutputExample0.png" style="width:59.38cqw" alt="">
     <span class="num">22</span>
   </article>
 </section>
-<section class="frame sub" id="s23" style="--pastel:#100e17">
+<section class="frame sub dark" id="s23" style="--pastel:#100e17">
   <article class="card">
-<h2>For A Prototype, It Offers An Achievable Build Order</h2>
-<img src="/attachments/projectOutputExample2.png" style="width:59.38cqw" alt="">
+<h2>Asks Questions.  Cautious with Suggestions.</h2>
+<img src="/attachments/projectOutputExample.png" style="width:56.25cqw" alt="">
     <span class="num">23</span>
   </article>
 </section>
-<section class="frame sub" id="s24" style="--pastel:#100e17">
+<section class="frame sub dark" id="s24" style="--pastel:#100e17">
   <article class="card">
-<h2>Learning on the Internet is Chaos Inside Infinity</h2>
-<img src="/attachments/projectOutputExample3.png" style="width:59.38cqw" alt="">
+<h2>For A Prototype, It Offers An Achievable Build Order</h2>
+<img src="/attachments/projectOutputExample2.png" style="width:59.38cqw" alt="">
     <span class="num">24</span>
   </article>
 </section>
-<section class="frame" id="s25" style="--pastel:#dcdcf0">
+<section class="frame sub dark" id="s25" style="--pastel:#100e17">
   <article class="card">
-<h1>Pushed to GitHub</h1>
+<h2>Learning on the Internet is Chaos Inside Infinity</h2>
+<img src="/attachments/projectOutputExample3.png" style="width:59.38cqw" alt="">
     <span class="num">25</span>
   </article>
 </section>
 <section class="frame" id="s26" style="--pastel:#dcdcf0">
+  <article class="card">
+<h1>Pushed to GitHub</h1>
+    <span class="num">26</span>
+  </article>
+</section>
+<section class="frame" id="s27" style="--pastel:#dcdcf0">
   <article class="card">
 <h1>Subsequent Conversation With Peter</h1>
 <ul>
@@ -498,19 +573,19 @@
 <li>The student still owned the important decisions</li>
 <li>The next artifact was stronger: the students drafted excellent macros</li>
 </ul>
-    <span class="num">26</span>
+    <span class="num">27</span>
   </article>
 </section>
-<section class="frame notitle" id="s27" style="--pastel:#aaaaaa">
+<section class="frame notitle" id="s28" style="--pastel:#aaaaaa">
   <article class="card">
 <h1>Nothing</h1>
 <h3>And so.</h3>
 <h3>At the same time.</h3>
 <h3>Game engines are changing.</h3>
-    <span class="num">27</span>
+    <span class="num">28</span>
   </article>
 </section>
-<section class="frame" id="s28" style="--pastel:#f8dcd6">
+<section class="frame" id="s29" style="--pastel:#f8dcd6">
   <article class="card">
 <h1>Unity</h1>
 <ul>
@@ -518,10 +593,10 @@
 <li>In terms of AI integration, it is ahead</li>
 <li>Unity games can be islands in Fortnite</li>
 </ul>
-    <span class="num">28</span>
+    <span class="num">29</span>
   </article>
 </section>
-<section class="frame" id="s29" style="--pastel:#f8dcd6">
+<section class="frame" id="s30" style="--pastel:#f8dcd6">
   <article class="card">
 <h1>Unreal 6.0</h1>
 <ul>
@@ -536,19 +611,19 @@
 <li><p>Let&#39;s embrace experimental features</p>
 </li>
 </ul>
-    <span class="num">29</span>
+    <span class="num">30</span>
   </article>
 </section>
-<section class="frame sub" id="s30" style="--pastel:#d8ebe6">
+<section class="frame sub" id="s31" style="--pastel:#d8ebe6">
   <article class="card">
 <h2>Back To The Topic - The Value of Persistent, Shared, Knowledge Workspaces</h2>
 <ul>
 <li>Starting next year, there will be a lot of us learning Unreal 6.0 in parallel</li>
 </ul>
-    <span class="num">30</span>
+    <span class="num">31</span>
   </article>
 </section>
-<section class="frame" id="s31" style="--pastel:#e7dcf3">
+<section class="frame" id="s32" style="--pastel:#e7dcf3">
   <article class="card">
 <h1>Students Will Inherit a Practice, Not a Bot</h1>
 <h3>In my Fall class, each team will <em><strong>branch</strong></em> Peter&#39;s Office Hours into its own version.</h3>
@@ -561,27 +636,112 @@
 <li>Improve the shared corpus as the project develops</li>
 <li>Keep consequential creative choices with the students</li>
 </ul>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-<br>
-    <span class="num">31</span>
+    <span class="num">32</span>
   </article>
 </section>
-<nav class="dots"><a href="#s1" class="newsec" style="--pastel:#000000" aria-label="Slide 1"></a><a href="#s2" class="" style="--pastel:#000000" aria-label="Slide 2"></a><a href="#s3" class="" style="--pastel:#100e17" aria-label="Slide 3"></a><a href="#s4" class="" style="--pastel:#f8dcd6" aria-label="Slide 4"></a><a href="#s5" class="newsec" style="--pastel:#d8ebe6" aria-label="Slide 5"></a><a href="#s6" class="" style="--pastel:#d8ebe6" aria-label="Slide 6"></a><a href="#s7" class="" style="--pastel:#d8ebe6" aria-label="Slide 7"></a><a href="#s8" class="" style="--pastel:#aaaaaa" aria-label="Slide 8"></a><a href="#s9" class="newsec" style="--pastel:#e7dcf3" aria-label="Slide 9"></a><a href="#s10" class="" style="--pastel:#e7dcf3" aria-label="Slide 10"></a><a href="#s11" class="" style="--pastel:#100e17" aria-label="Slide 11"></a><a href="#s12" class="newsec" style="--pastel:#f9ecc9" aria-label="Slide 12"></a><a href="#s13" class="" style="--pastel:#f9ecc9" aria-label="Slide 13"></a><a href="#s14" class="newsec" style="--pastel:#d9e7f5" aria-label="Slide 14"></a><a href="#s15" class="" style="--pastel:#100e17" aria-label="Slide 15"></a><a href="#s16" class="" style="--pastel:#100e17" aria-label="Slide 16"></a><a href="#s17" class="" style="--pastel:#100e17" aria-label="Slide 17"></a><a href="#s18" class="" style="--pastel:#00000" aria-label="Slide 18"></a><a href="#s19" class="newsec" style="--pastel:#e3ecd0" aria-label="Slide 19"></a><a href="#s20" class="" style="--pastel:#e3ecd0" aria-label="Slide 20"></a><a href="#s21" class="newsec" style="--pastel:#100e17" aria-label="Slide 21"></a><a href="#s22" class="" style="--pastel:#100e17" aria-label="Slide 22"></a><a href="#s23" class="" style="--pastel:#100e17" aria-label="Slide 23"></a><a href="#s24" class="" style="--pastel:#100e17" aria-label="Slide 24"></a><a href="#s25" class="newsec" style="--pastel:#dcdcf0" aria-label="Slide 25"></a><a href="#s26" class="" style="--pastel:#dcdcf0" aria-label="Slide 26"></a><a href="#s27" class="newsec" style="--pastel:#aaaaaa" aria-label="Slide 27"></a><a href="#s28" class="newsec" style="--pastel:#f8dcd6" aria-label="Slide 28"></a><a href="#s29" class="" style="--pastel:#f8dcd6" aria-label="Slide 29"></a><a href="#s30" class="newsec" style="--pastel:#d8ebe6" aria-label="Slide 30"></a><a href="#s31" class="newsec" style="--pastel:#e7dcf3" aria-label="Slide 31"></a></nav>
+<section class="frame tall" id="s33" style="--pastel:#e7dcf3">
+  <article class="card">
+<h1>Appendix A: Browser Chat vs Persistent Workspace</h1>
+<table>
+<thead>
+<tr>
+<th>Browser chat</th>
+<th>Persistent workspace</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Produces an answer</td>
+<td>Produces durable work</td>
+</tr>
+<tr>
+<td>Context is supplied temporarily</td>
+<td>Context persists in project files</td>
+</tr>
+<tr>
+<td>Memory is largely service-controlled</td>
+<td>Project memory can live in team-controlled files</td>
+</tr>
+<tr>
+<td>Suggests what someone might do</td>
+<td>Reads, writes, uses tools, and checks its work</td>
+</tr>
+<tr>
+<td>Share a transcript</td>
+<td>Share files, diffs, and review</td>
+</tr>
+<tr>
+<td>Improve the prompt</td>
+<td>Improve the corpus, instructions, and workflow</td>
+</tr>
+<tr>
+<td>Conversation history</td>
+<td>Version history</td>
+</tr>
+</tbody></table>
+    <span class="num">33</span>
+  </article>
+</section>
+<section class="frame sub" id="s34" style="--pastel:#e7dcf3">
+  <article class="card">
+<h2>Appendix A: The Team Owns the Workspace</h2>
+<ul>
+<li>Obsidian is the human interface; ordinary Markdown files are the underlying system</li>
+<li>The agent works with the files, not with a proprietary Obsidian format</li>
+<li>GitHub provides shared history, branching, comparison, and review</li>
+<li>Another compatible agent can work from the same corpus</li>
+<li>People can inspect, reject, revise, or reverse the agent&#39;s changes</li>
+</ul>
+<br>
+
+<h3>The team is not sharing the same bot.</h3>
+<h3>The team is maintaining the same body of knowledge and practice.</h3>
+    <span class="num">34</span>
+  </article>
+</section>
+<section class="frame tall" id="s35" style="--pastel:#e7dcf3">
+  <article class="card">
+<h1>Appendix B: Peter&#39;s Takes (Details)</h1>
+<ul>
+<li>USC Accounts <ul>
+<li>Have privacy but weak model &quot;effort&quot; options</li>
+<li>Can&#39;t do CLI&#39;s - <em>agents in a persistent workspace</em> - that I&#39;m arguing for in this slideshow</li>
+</ul>
+</li>
+<li>LLM&#39;s Have Compute Levels, &quot;effort&quot;.  Productively toggling among them is a learned skill<br>
+  <img src="/attachments/ClaudeModels.png" style="width:21.09cqw" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/attachments/ClaudeEfforts.png" style="width:25.78cqw" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/attachments/CodexModels.png" style="width:31.25cqw" alt=""></li>
+<li>U.S. Frontier Models<ul>
+<li>Claude and Codex are peers.  Gemini is right there with them</li>
+<li>Their &quot;CLI&#39;s&quot; are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)</li>
+<li>Peter pays for - Claude, Codex, Gemini, Perplexity, Deepseek (per token)</li>
+<li>Get to know Claude&#39;s &quot;Plan Mode&quot;</li>
+<li>Google:  Google search, AI Mode, and Gemini are not the same thing</li>
+</ul>
+</li>
+<li>Chinese LLM&#39;s. <em><strong>Our Chinese students use these.</strong></em> <ul>
+<li>Deepseek, Qwan, Kimi, etc compete with U.S. models and are cheap.  </li>
+<li>Often can be downloaded for privacy and control.  So can Meta&#39;s (Llama).</li>
+</ul>
+</li>
+<li>Perplexity <ul>
+<li>Handy for researching AI itself</li>
+<li>Broader search too: $20/month for best alternative - ever - to Google search</li>
+</ul>
+</li>
+<li>Popular - Obsidian, VS Code, Github</li>
+<li>Tokens and Context - learn how to conserve </li>
+<li>Ask your LLM to response with an html page - easier to read helps Guiding Question, above</li>
+</ul>
+<br>
+    <span class="num">35</span>
+  </article>
+</section>
+<nav class="dots"><a href="#s1" class="newsec" style="--pastel:#000000" aria-label="Slide 1"></a><a href="#s2" class="" style="--pastel:#000000" aria-label="Slide 2"></a><a href="#s3" class="" style="--pastel:#100e17" aria-label="Slide 3"></a><a href="#s4" class="" style="--pastel:#100e17" aria-label="Slide 4"></a><a href="#s5" class="" style="--pastel:#100e17" aria-label="Slide 5"></a><a href="#s6" class="" style="--pastel:#f8dcd6" aria-label="Slide 6"></a><a href="#s7" class="newsec" style="--pastel:#d8ebe6" aria-label="Slide 7"></a><a href="#s8" class="" style="--pastel:#d8ebe6" aria-label="Slide 8"></a><a href="#s9" class="" style="--pastel:#aaaaaa" aria-label="Slide 9"></a><a href="#s10" class="newsec" style="--pastel:#e7dcf3" aria-label="Slide 10"></a><a href="#s11" class="" style="--pastel:#e7dcf3" aria-label="Slide 11"></a><a href="#s12" class="" style="--pastel:#100e17" aria-label="Slide 12"></a><a href="#s13" class="newsec" style="--pastel:#f9ecc9" aria-label="Slide 13"></a><a href="#s14" class="" style="--pastel:#f9ecc9" aria-label="Slide 14"></a><a href="#s15" class="newsec" style="--pastel:#d9e7f5" aria-label="Slide 15"></a><a href="#s16" class="" style="--pastel:#100e17" aria-label="Slide 16"></a><a href="#s17" class="" style="--pastel:#100e17" aria-label="Slide 17"></a><a href="#s18" class="" style="--pastel:#100e17" aria-label="Slide 18"></a><a href="#s19" class="" style="--pastel:#000000" aria-label="Slide 19"></a><a href="#s20" class="newsec" style="--pastel:#e3ecd0" aria-label="Slide 20"></a><a href="#s21" class="" style="--pastel:#e3ecd0" aria-label="Slide 21"></a><a href="#s22" class="newsec" style="--pastel:#100e17" aria-label="Slide 22"></a><a href="#s23" class="" style="--pastel:#100e17" aria-label="Slide 23"></a><a href="#s24" class="" style="--pastel:#100e17" aria-label="Slide 24"></a><a href="#s25" class="" style="--pastel:#100e17" aria-label="Slide 25"></a><a href="#s26" class="newsec" style="--pastel:#dcdcf0" aria-label="Slide 26"></a><a href="#s27" class="" style="--pastel:#dcdcf0" aria-label="Slide 27"></a><a href="#s28" class="newsec" style="--pastel:#aaaaaa" aria-label="Slide 28"></a><a href="#s29" class="newsec" style="--pastel:#f8dcd6" aria-label="Slide 29"></a><a href="#s30" class="" style="--pastel:#f8dcd6" aria-label="Slide 30"></a><a href="#s31" class="newsec" style="--pastel:#d8ebe6" aria-label="Slide 31"></a><a href="#s32" class="newsec" style="--pastel:#e7dcf3" aria-label="Slide 32"></a><a href="#s33" class="" style="--pastel:#e7dcf3" aria-label="Slide 33"></a><a href="#s34" class="" style="--pastel:#e7dcf3" aria-label="Slide 34"></a><a href="#s35" class="" style="--pastel:#e7dcf3" aria-label="Slide 35"></a></nav>
 <script>
   // Presenting: arrows / space / PageDown move slide to slide. Plain scrolling
   // still walks through everything.
   const slides = [...document.querySelectorAll(".frame")];
+  const initialSlide = location.hash && document.querySelector(location.hash);
+  if (initialSlide) scrollTo({ top: initialSlide.offsetTop, behavior: "instant" });
   const current = () => {
     const mid = scrollY + innerHeight / 2;
     let best = 0;

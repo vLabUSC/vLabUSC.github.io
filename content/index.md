@@ -13,8 +13,8 @@ publish: true
 
 <div align="center">
 
-# The GET
+# GDOH
 
 </div>
 
-[**The GET**](https://vlabusc.github.io/The-GET/) — The Game Engine Tutor maps an early idea for a playable story or world, outlining what is known, what questions remain, and how the prototype might be built in a game engine.
+[**GDOH**](https://vlabusc.github.io/The-GET/) — GDOH (Game Design Office Hours) maps an early idea for a playable story or world, outlining what is known, what questions remain, and how the prototype might be built in a game engine.

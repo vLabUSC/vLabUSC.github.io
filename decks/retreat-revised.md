@@ -5,7 +5,7 @@ paginate: true
 publish: false
 ---
 
-# If I Don't Craft My AI Practice, AI Will Craft Me {bg:#000000}
+# Putting AI Where I Can See It {bg:#000000}
 
 
 
@@ -16,31 +16,60 @@ publish: false
 <p style="text-align:center">![[ChatGPT_Chat.png|800]]</p>
 
 
+## We Already Know How to Work This Way {.image-right bg:#100e17}
+
+<p>![[perforce1.png|420]]</p>
+
+### For years, our Unity and Unreal teams have worked in shared, versioned project workspaces.
+
+- The project consists of files
+- Each teammate has a local workspace
+- Perforce maintains the shared depot and history
+- The team submits, reviews, and integrates changes
 
 
-## A Workspace Makes the Practice Visible {bg:#100e17}
+## Software Teams Added Agents Inside That Workspace {bg:#100e17}
 
-<p style="text-align:center;max-width:none">![[ObsidianWide.png|650]]</p>
+<p style="text-align:center;max-width:none;margin-bottom:0">![[ClaudeCode_type.png|850]]</p>
 
-<p style="text-align:center;max-width:none;margin-bottom:0">![[ClaudeCode_type.png|650]]</p>
+### 
 
-<br>
+## Now Apply the Same Pattern to Knowledge {.twocol bg:#100e17}
 
-#### <span style="color:#ffffff">Sources, instructions, memory, and outputs live where I can inspect them.</span> 
+<p>![[ObsidianWide.png|900]]</p>
 
-# Shared Clarity 
+### My Obsidian vault is a project made of readable Markdown files.
 
-| Browser chat | Persistent workspace |
+- The agent and I work in the same files
+- GitHub records and shares every change
+- Other people can branch, review, and contribute
+- The corpus remains portable and LLM-agnostic
+
+
+
+## The collaborative practice of software projects applied to knowledge.
+
+| Game/software production | Knowledge production |
 |---|---|
-| Produces an answer | Produces an artifact |
-| Context is supplied temporarily | Context persists in files |
-| Memory is largely hidden | Project memory is inspectable |
-| Share a transcript | Review and revise the work |
-| Improve the prompt | Improve the corpus, instructions, and workflow |
-| One person talks to AI | A team works through shared material |
+| Unity or Unreal project | Obsidian vault |
+| Code, assets, and configuration | Notes, research, tutorials, and examples |
+| Local Perforce workspace | Local vault or Git working copy |
+| Shared Perforce depot | Shared GitHub repository |
+| Changelist and review | Commit, diff, and review |
 
+##### Appendix A: Browser chat and persistent workspaces compared
 
 ---
+
+# Peter's Takes - Talk To Me
+
+- USC Accounts
+- Frontier vs Chinese LLMs
+- LLM Settings - Model; Effort
+- Perplexity
+- Best Practices
+
+
 
 # The Guiding Question
 
@@ -55,37 +84,8 @@ publish: false
 - Interpretation and uncertainty
 - Creative conviction
 
-# Peter's Takes
-
-- USC Accounts
-- Frontier vs Chinese LLMs
-- Model Settings
-- Perplexity
-- Best Practices
-
-
-## Peter's Takes (Details) {.tall}
-
-- USC Accounts 
-	- Have privacy but weak model "effort" options
-	- Can't do CLI's - *agents in a persistent workspace* - that I'm arguing for in this slideshow
-- LLM's Have Compute Levels, "effort".  Constructively toggling among them is a learned skill<br>
-	![[ClaudeModels.png|270]]&nbsp;&nbsp;&nbsp;&nbsp;![[ClaudeEfforts.png|330]]&nbsp;&nbsp;&nbsp;&nbsp;![[CodexModels.png|400]]
-- U.S. Frontier Models
-	- Claude and Codex are peers.  Gemini is right there with them
-	- Their "CLI's" are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)
-	- Peter pays for - Claude, Codex, Gemini, Perplexity, Deepseek (per token)
-	- Get to know Claude's "Plan Mode"
-	- Google:  Google search, AI Mode, and Gemini are not the same thing
-- Chinese LLM's. ***Our Chinese students use these.*** 
-	- Deepseek, Qwan, Kimi, etc (in the browser) compete with U.S. models and are cheap.  
-	- Often can be downloaded for privacy and control.  So can Meta's (Llama).
-- Perplexity 
-	- To research AI itself
-	- Broader search too: $20/month for best alternative - ever - to Google search
-- Popular - Obsidian, VS Code, Github
-- Tokens and Context - learn how to conserve 
-- Ask your LLM to response with an html page - easier to read helps Guiding Question, above
+<br><br>
+#### See Appendix B For Details
 
 
 
@@ -171,7 +171,7 @@ publish: false
 ![[obsidianScreenshot2.png|850]]
 
 
-#  In Context Learning {bg:#00000}
+# In Context Learning {bg:#000000}
 
 ![[LLMtoICL.png|950]]
 
@@ -290,7 +290,57 @@ publish: false
 
 
 
+# Appendix A: Browser Chat vs Persistent Workspace {.tall}
+
+| Browser chat | Persistent workspace |
+|---|---|
+| Produces an answer | Produces durable work |
+| Context is supplied temporarily | Context persists in project files |
+| Memory is largely service-controlled | Project memory can live in team-controlled files |
+| Suggests what someone might do | Reads, writes, uses tools, and checks its work |
+| Share a transcript | Share files, diffs, and review |
+| Improve the prompt | Improve the corpus, instructions, and workflow |
+| Conversation history | Version history |
+
+
+## Appendix A: The Team Owns the Workspace
+
+- Obsidian is the human interface; ordinary Markdown files are the underlying system
+- The agent works with the files, not with a proprietary Obsidian format
+- GitHub provides shared history, branching, comparison, and review
+- Another compatible agent can work from the same corpus
+- People can inspect, reject, revise, or reverse the agent's changes
+
 <br>
+
+### The team is not sharing the same bot.
+
+### The team is maintaining the same body of knowledge and practice.
+
+# Appendix B: Peter's Takes (Details) {.tall}
+
+- USC Accounts 
+	- Have privacy but weak model "effort" options
+	- Can't do CLI's - *agents in a persistent workspace* - that I'm arguing for in this slideshow
+- LLM's Have Compute Levels, "effort".  Productively toggling among them is a learned skill<br>
+	![[ClaudeModels.png|270]]&nbsp;&nbsp;&nbsp;&nbsp;![[ClaudeEfforts.png|330]]&nbsp;&nbsp;&nbsp;&nbsp;![[CodexModels.png|400]]
+- U.S. Frontier Models
+	- Claude and Codex are peers.  Gemini is right there with them
+	- Their "CLI's" are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)
+	- Peter pays for - Claude, Codex, Gemini, Perplexity, Deepseek (per token)
+	- Get to know Claude's "Plan Mode"
+	- Google:  Google search, AI Mode, and Gemini are not the same thing
+- Chinese LLM's. ***Our Chinese students use these.*** 
+	- Deepseek, Qwan, Kimi, etc compete with U.S. models and are cheap.  
+	- Often can be downloaded for privacy and control.  So can Meta's (Llama).
+- Perplexity 
+	- Handy for researching AI itself
+	- Broader search too: $20/month for best alternative - ever - to Google search
+- Popular - Obsidian, VS Code, Github
+- Tokens and Context - learn how to conserve 
+- Ask your LLM to response with an html page - easier to read helps Guiding Question, above
+
+
 
 
 
@@ -304,4 +354,3 @@ publish: false
 
 
 <br>
-

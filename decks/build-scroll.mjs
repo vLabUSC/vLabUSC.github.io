@@ -68,6 +68,21 @@ const PASTELS = [
   "#f9e0cd", // apricot
 ];
 
+function isDarkBackground(value) {
+  const normalized = String(value || "").trim().toLowerCase();
+  if (normalized === "black") return true;
+  const shortHex = /^#([0-9a-f]{3})$/.exec(normalized);
+  const longHex = /^#([0-9a-f]{6})$/.exec(normalized);
+  const hex = shortHex
+    ? shortHex[1].split("").map((c) => c + c).join("")
+    : longHex?.[1];
+  if (!hex) return false;
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  return (0.2126 * r + 0.7152 * g + 0.0722 * b) < 110;
+}
+
 // Heading level drives the structure:
 //   #   -> a slide, titled at full size
 //   ##  -> a slide, titled one size down — a continuation of the point above it
@@ -115,13 +130,15 @@ function parseFrames(body) {
       }
       return "";
     });
+    const color = PASTELS[(f.section - 1) % PASTELS.length];
+    if (isDarkBackground(bg || color)) classes.push("dark");
     return {
       ...f,
       classes,
       bg,
       md: resolveEmbeds(f.lines.join("\n").trim()),
       label: String(f.slide),
-      color: PASTELS[(f.section - 1) % PASTELS.length],
+      color,
     };
   });
   return mapped;
@@ -205,6 +222,14 @@ const page = (title, frames, dots) => `<!doctype html>
     /* proximity, not mandatory: a {.tall} page is longer than the window, so
        you can rest partway down one instead of being yanked to its edge. */
     scroll-snap-type: y proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body::-webkit-scrollbar,
+  .card::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
   }
   /* every heading makes one of these: full screen, 16:9, snaps */
   .frame {
@@ -228,7 +253,85 @@ const page = (title, frames, dots) => `<!doctype html>
     aspect-ratio: 16 / 9;
     max-height: 100%;
     overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     justify-content: center;
+  }
+  .frame.dark .card {
+    --ink: #f2f4f8;
+    --muted: #aeb7c4;
+    --accent: #16c4e3;
+    color: var(--ink);
+  }
+  .frame.dark .card strong,
+  .frame.dark .card th { color: #ffffff; }
+  .frame.dark .card em,
+  .frame.dark .card h5,
+  .frame.dark .card blockquote { color: #cbd3dd; }
+  .frame.dark .card a { color: #62dcf2; }
+  /* Two-column frame marker: image on the left, explanatory copy on the right. */
+  .frame.twocol .card {
+    display: grid;
+    grid-template-columns: minmax(0, .56fr) minmax(300px, .44fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: clamp(1.25rem, 3cqi, 2.5rem);
+    align-items: start;
+    justify-content: stretch;
+  }
+  .frame.twocol .card > h1,
+  .frame.twocol .card > h2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .frame.twocol .card > p:first-of-type {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    align-self: center;
+    margin: 0;
+  }
+  .frame.twocol .card > h3,
+  .frame.twocol .card > h4 {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+  }
+  .frame.twocol .card > ul,
+  .frame.twocol .card > ol {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+  }
+  /* Image-right variant: every piece of copy, including the title, stays left. */
+  .frame.image-right .card {
+    display: grid;
+    grid-template-columns: minmax(0, .62fr) minmax(240px, .38fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: clamp(1.5rem, 4cqi, 3.5rem);
+    align-items: start;
+    justify-content: stretch;
+  }
+  .frame.image-right .card > h1,
+  .frame.image-right .card > h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .frame.image-right .card > h3,
+  .frame.image-right .card > h4 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+  }
+  .frame.image-right .card > ul,
+  .frame.image-right .card > ol {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: start;
+  }
+  .frame.image-right .card > p:first-of-type {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: center;
+    margin: 0;
   }
   /* Frame marker {.tall} — for a page carrying more than a 16:9 card holds.
      Drops the fixed height so the card grows to its content and scrolls in the
@@ -378,6 +481,8 @@ ${frames}
   // Presenting: arrows / space / PageDown move slide to slide. Plain scrolling
   // still walks through everything.
   const slides = [...document.querySelectorAll(".frame")];
+  const initialSlide = location.hash && document.querySelector(location.hash);
+  if (initialSlide) scrollTo({ top: initialSlide.offsetTop, behavior: "instant" });
   const current = () => {
     const mid = scrollY + innerHeight / 2;
     let best = 0;
@@ -482,8 +587,10 @@ const reloadClient = `<link rel="preconnect" href="https://fonts.googleapis.com"
   // restore scroll position across reloads so you land where you were
   const key = "deck-scroll";
   addEventListener("load", () => {
+    const target = location.hash && document.querySelector(location.hash);
     const y = sessionStorage.getItem(key);
-    if (y) scrollTo({ top: +y, behavior: "instant" });
+    if (target) target.scrollIntoView({ behavior: "instant", block: "center" });
+    else if (y) scrollTo({ top: +y, behavior: "instant" });
     new EventSource("/__reload").onmessage = () => location.reload();
   });
   addEventListener("scroll", () => sessionStorage.setItem(key, scrollY), { passive: true });

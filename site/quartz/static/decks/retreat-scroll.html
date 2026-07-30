@@ -30,6 +30,14 @@
     /* proximity, not mandatory: a {.tall} page is longer than the window, so
        you can rest partway down one instead of being yanked to its edge. */
     scroll-snap-type: y proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body::-webkit-scrollbar,
+  .card::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
   }
   /* every heading makes one of these: full screen, 16:9, snaps */
   .frame {
@@ -53,7 +61,85 @@
     aspect-ratio: 16 / 9;
     max-height: 100%;
     overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     justify-content: center;
+  }
+  .frame.dark .card {
+    --ink: #f2f4f8;
+    --muted: #aeb7c4;
+    --accent: #16c4e3;
+    color: var(--ink);
+  }
+  .frame.dark .card strong,
+  .frame.dark .card th { color: #ffffff; }
+  .frame.dark .card em,
+  .frame.dark .card h5,
+  .frame.dark .card blockquote { color: #cbd3dd; }
+  .frame.dark .card a { color: #62dcf2; }
+  /* Two-column frame marker: image on the left, explanatory copy on the right. */
+  .frame.twocol .card {
+    display: grid;
+    grid-template-columns: minmax(0, .56fr) minmax(300px, .44fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: clamp(1.25rem, 3cqi, 2.5rem);
+    align-items: start;
+    justify-content: stretch;
+  }
+  .frame.twocol .card > h1,
+  .frame.twocol .card > h2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .frame.twocol .card > p:first-of-type {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    align-self: center;
+    margin: 0;
+  }
+  .frame.twocol .card > h3,
+  .frame.twocol .card > h4 {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+  }
+  .frame.twocol .card > ul,
+  .frame.twocol .card > ol {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+  }
+  /* Image-right variant: every piece of copy, including the title, stays left. */
+  .frame.image-right .card {
+    display: grid;
+    grid-template-columns: minmax(0, .62fr) minmax(240px, .38fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: clamp(1.5rem, 4cqi, 3.5rem);
+    align-items: start;
+    justify-content: stretch;
+  }
+  .frame.image-right .card > h1,
+  .frame.image-right .card > h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .frame.image-right .card > h3,
+  .frame.image-right .card > h4 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+  }
+  .frame.image-right .card > ul,
+  .frame.image-right .card > ol {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: start;
+  }
+  .frame.image-right .card > p:first-of-type {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: center;
+    margin: 0;
   }
   /* Frame marker {.tall} — for a page carrying more than a 16:9 card holds.
      Drops the fixed height so the card grows to its content and scrolls in the
@@ -205,13 +291,13 @@ Finding the right philosophy for me and my students, I&#39;m uncertain that asse
     <span class="num">1</span>
   </article>
 </section>
-<section class="frame" id="s2" style="--pastel:#000000">
+<section class="frame dark" id="s2" style="--pastel:#000000">
   <article class="card">
 <h1>Peter AI-Upgraded During His Sabbatical</h1>
     <span class="num">2</span>
   </article>
 </section>
-<section class="frame sub" id="s3" style="--pastel:#000000">
+<section class="frame sub dark" id="s3" style="--pastel:#000000">
   <article class="card">
 <h2><span style="color:#999999">Conversing With AI in the Browser </span></h2>
 <p><br><br></p>
@@ -219,7 +305,7 @@ Finding the right philosophy for me and my students, I&#39;m uncertain that asse
     <span class="num">3</span>
   </article>
 </section>
-<section class="frame sub" id="s4" style="--pastel:#100e17">
+<section class="frame sub dark" id="s4" style="--pastel:#100e17">
   <article class="card">
 <h2><span style="color:#999999">Working With Agents in a Persistent Workspace</span></h2>
 <p style="text-align:center;max-width:none"><img src="/attachments/ObsidianWide.png" style="width:50.78cqw" alt=""></p>
@@ -228,7 +314,7 @@ Finding the right philosophy for me and my students, I&#39;m uncertain that asse
     <span class="num">4</span>
   </article>
 </section>
-<section class="frame" id="s5" style="--pastel:#100e17">
+<section class="frame dark" id="s5" style="--pastel:#100e17">
   <article class="card">
 <h1>The Three Surfaces</h1>
 <p style="text-align:center;max-width:none;margin-bottom:0"><img src="/attachments/claude_chat_cowork.png" style="width:39.06cqw" alt=""> <img src="/attachments/claude_code.png" style="width:39.06cqw" alt=""></p>
@@ -363,21 +449,21 @@ Finding the right philosophy for me and my students, I&#39;m uncertain that asse
     <span class="num">14</span>
   </article>
 </section>
-<section class="frame" id="s15" style="--pastel:#100e17">
+<section class="frame dark" id="s15" style="--pastel:#100e17">
   <article class="card">
 <h1>Converted My Slides to a Wiki (Web)</h1>
 <img src="/attachments/webGETscreenshot.png" style="width:62.50cqw" alt="">
     <span class="num">15</span>
   </article>
 </section>
-<section class="frame" id="s16" style="--pastel:#100e17">
+<section class="frame dark" id="s16" style="--pastel:#100e17">
   <article class="card">
 <h1>A Corpus of Markdown Files</h1>
 <p><img src="/attachments/obsidianScreenshot1.png" style="width:62.50cqw" alt="">!</p>
     <span class="num">16</span>
   </article>
 </section>
-<section class="frame" id="s17" style="--pastel:#100e17">
+<section class="frame dark" id="s17" style="--pastel:#100e17">
   <article class="card">
 <h1>Maintained on GitHub</h1>
 <img src="/attachments/obsidianScreenshot2.png" style="width:66.41cqw" alt="">
@@ -422,28 +508,28 @@ Finding the right philosophy for me and my students, I&#39;m uncertain that asse
     <span class="num">20</span>
   </article>
 </section>
-<section class="frame" id="s21" style="--pastel:#100e17">
+<section class="frame dark" id="s21" style="--pastel:#100e17">
   <article class="card">
 <h1>Output a Doc Pushed to Our Github</h1>
 <img src="/attachments/projectOutputExample0.png" style="width:62.50cqw" alt="">
     <span class="num">21</span>
   </article>
 </section>
-<section class="frame notitle" id="s22" style="--pastel:#100e17">
+<section class="frame notitle dark" id="s22" style="--pastel:#100e17">
   <article class="card">
 <h1>Nothing</h1>
 <img src="/attachments/projectOutputExample.png" style="width:62.50cqw" alt="">
     <span class="num">22</span>
   </article>
 </section>
-<section class="frame notitle" id="s23" style="--pastel:#100e17">
+<section class="frame notitle dark" id="s23" style="--pastel:#100e17">
   <article class="card">
 <h1>Nothing</h1>
 <img src="/attachments/projectOutputExample2.png" style="width:62.50cqw" alt="">
     <span class="num">23</span>
   </article>
 </section>
-<section class="frame notitle" id="s24" style="--pastel:#100e17">
+<section class="frame notitle dark" id="s24" style="--pastel:#100e17">
   <article class="card">
 <h1>Nothing</h1>
 <img src="/attachments/projectOutputExample3.png" style="width:62.50cqw" alt="">
@@ -524,6 +610,8 @@ Finding the right philosophy for me and my students, I&#39;m uncertain that asse
   // Presenting: arrows / space / PageDown move slide to slide. Plain scrolling
   // still walks through everything.
   const slides = [...document.querySelectorAll(".frame")];
+  const initialSlide = location.hash && document.querySelector(location.hash);
+  if (initialSlide) scrollTo({ top: initialSlide.offsetTop, behavior: "instant" });
   const current = () => {
     const mid = scrollY + innerHeight / 2;
     let best = 0;
