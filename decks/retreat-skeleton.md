@@ -16,11 +16,14 @@ publish: false
 #### If our students are mostly doing this, they're behind.
 
 ---
+# "Workspace" For Us
 
-<br>
-# Today's Game Development Practice
+#### Your video game project - locally
 
-#### Connecting An LLM To A Workspace
+
+# Today's Software Practice
+
+####  Software Teams Added Agents Inside Their Workspace
 
 
 
@@ -28,7 +31,7 @@ publish: false
 
 <p>![[ObsidianWide.png|900]]</p>
 
-### <br><br> The LLM and I read and write the same human-legible files in a "vault"
+### <br><br> The LLM and I read and write the same human-legible files.
 
 
 
@@ -39,12 +42,12 @@ publish: false
 
 ---
 
-# This keeps my sources, instructions, thinking, and outputs visible and revisable.
+# The LLM and I have the same connect to the content
 
 ---
 
 # GitHub makes that thinking versioned, shareable, and open to collaboration.
-### We've Been Doing Shared Persistant Workspaces Forever {.image-right bg:#100e17}
+## We've Been Doing Shared Persistant Workspaces Forever {.image-right bg:#100e17}
 
 <p>![[perforce1.png|420]]</p>
 
