@@ -9,7 +9,7 @@ publish: true
 
 </div>
 
-[**Geidai Worldbuilding Intensive**](geidai/) — a four-day intensive at Tokyo University of the Arts - build a playable, bounded world.
+[**Peter Brinson — Teaching**](https://peterbrinson.github.io/teach/) — courses and talks, including the Geidai Worldbuilding Intensive and CTIN 389.
 
 <div align="center">
 
