@@ -366,6 +366,10 @@ const page = (title, frames, dots) => `<!doctype html>
   .card a { color: #0a6e8a; overflow-wrap: anywhere; }
   .card p, .card li { font-size: clamp(.95rem, 1.9cqi, 1.5rem); }
   .card p { margin: 0 0 .8em; }
+  /* Frame marker {.big} — scales body copy up for a slide carrying few,
+     important lines (a handful of bullets standing in for the whole point). */
+  .frame.big .card p,
+  .frame.big .card li { font-size: clamp(1.3rem, 3cqi, 2.2rem); }
   /* {.notitle} hides the slide's title but keeps the heading (page break +
      colour), so a full-bleed image or dense page reclaims the space it took. */
   .frame.notitle .card > h1,

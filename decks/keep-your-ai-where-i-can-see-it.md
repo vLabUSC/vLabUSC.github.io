@@ -8,9 +8,9 @@ publish: false
 
 <br><br><br><br><br><br><br><br><br><br>
 
- Notes on Advancing My AI Practice
+	 Peter's Notes On Leveling Up An AI Practice
 
-# Peter's Takes - Appendix B
+# Peter's Takes - Appendix D Has Detail
 
 - USC Accounts
 - Frontier vs Chinese LLMs
@@ -99,19 +99,15 @@ publish: false
 - Meaningful choices
 - Interpretation and uncertainty
 - Creative conviction - our best ideas happen when our minds are disconnected from AI.
-
-<br>
-
-<br><br>
-#### 
+	- *this slide is just as much for engineers as anyone*
 
 ---
 
 # GD Office Hours is my working example.
 
-# ---give a little summary of what it does
+# GDOH turns my course material into an AI guide that walks a student from a nascent game idea to a build order they carry out themselves in Unreal.
 
-# Nothing {.notitle bg:#aaaaaa}
+# Nothing {.notitle bg:#aaaaaa .big}
 
 - Turned all my teaching materials - slides, notes, lessons, assignments - into a "knowledge bundle"
 - A kind of wiki formatted for people and LLMs alike
@@ -150,13 +146,13 @@ publish: false
 	- **Unreal** — tutorials and a practical wiki
 	- **References** — curated game and film examples
 - **Agent Specification**
-	- ***Reccorded Examples*** —  of productive conversations
-	- ***Instructions*** — how to speak with the student (i.e. refuses to generate ideas)
+	- ***Recorded Examples*** —  of productive conversations
+	- ***Instructions*** — how to speak with the student (e.g. refuses to generate ideas)
 	- ***LLM-agnostic*** — works with many models
 
 <br><br>
 
-Appendix C comments on terminology. 
+Appendix B comments on terminology. 
 # Instructions  {bg:#000000} 
 
 ![[GDOH_Instructions.png|1000]]
@@ -240,8 +236,12 @@ Appendix C comments on terminology.
 - Starting next year, there will be a lot of us learning Unreal 6.0 in parallel
 ---
 
+# Ignore {.notitle bg:#aaaaaa .big}
 
-# Next Step, Peter
+
+The End
+
+# Appendix A: Next Step, Peter
 
 <br>
 
@@ -255,7 +255,19 @@ Appendix C comments on terminology.
 
 
 
-# Appendix A: Browser Chat vs Persistent Workspace {.tall}
+
+
+
+# Appendix B
+
+The GDOH is an example of what?  Give me the concise term.<br>
+It is 
+- *a full knowledge bundle plus a behavior spec, packaged as one distributable unit that turns a generic coding agent into a specific one via in-context learning.*
+
+<br><br>
+
+<p style="font-size:1em">If you have a shorter term for me, please share.</p>
+# Appendix C: Browser Chat vs Persistent Workspace {.tall}
 
 | Browser chat | Persistent workspace |
 |---|---|
@@ -274,36 +286,28 @@ Appendix C comments on terminology.
 
 
 
-# Appendix B: Peter's Takes (Details) {.tall}
+# Appendix D: Peter's Quick Takes (Let's Discuss) {.tall}
 
 - USC Accounts 
 	- Have privacy but weak model "effort" options
-	- Can't do CLI's - *agents in a persistent workspace* - that I'm arguing for in this slideshow
-- LLM's Have Compute Levels, "effort".  Productively toggling among them is a learned skill<br>
+	- Can't do CLIs - *agents in a persistent workspace* - that I'm arguing for in this slideshow
+- LLMs Have Compute Levels, "effort".  Productively toggling among them is a learned skill<br>
 	![[ClaudeModels.png|270]]&nbsp;&nbsp;&nbsp;&nbsp;![[ClaudeEfforts.png|330]]&nbsp;&nbsp;&nbsp;&nbsp;![[CodexModels.png|400]]
 - U.S. Frontier Models
 	- Claude and Codex are peers.  Gemini is right there with them
-	- Their "CLI's" are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)
+	- Their "CLIs" are Claude Code, (ChatGPT's) Codex , and (Gemini/Google's) Antigravity 
+	- The default CLI is the terminal.  For the Chinese models I've used, the terminal is the only choice
 	- Peter pays for - Claude, Codex, Gemini, Perplexity, Deepseek (per token)
-	- OpenAI just announced pay as you go cheap for their modest models
+	- OpenAI just announced pay as you go cheap for their modest models.  But only for the API, likely not useful
 	- Get to know Claude's "Plan Mode"
 	- Google:  Google search, AI Mode, and Gemini are not the same thing
-- Chinese LLM's. ***Our Chinese students use these.*** 
-	- Deepseek, Qwan, Kimi, etc compete with U.S. models and are cheap.  
+- Chinese LLMs. ***Our Chinese students use these.*** 
+	- Deepseek, Qwen, Kimi, etc compete with U.S. models and are cheap.  
 	- Often can be downloaded for privacy and control.  So can Meta's (Llama).
 - Perplexity 
-	- Handy for researching AI itself
+	- Handy for researching AI itself as it's functionally unbiased 
 	- Broader search too: $20/month for best alternative - ever - to Google search
-- Popular - Obsidian, VS Code, Github
-- Tokens and Context - learn how to conserve 
-- Ask your LLM to response with an html page - easier to read helps Guiding Question, above
-
-
-
-
-# Appendix C
-
-The GDOH is an example of what?  Give me the concise term.<br><br>
-I can't.  <br><br>
-It is 
-- *a full knowledge bundle plus a behavior spec, packaged as one distributable unit that turns a generic coding agent into a specific one via in-context learning.*
+- Popular - Obsidian, VS Code, GitHub
+- Tokens and Context - learn how to conserve  
+ ![[claude_tokenwatch.png|400]]
+- Ask your LLM to respond with an html page - easier to read helps Guiding Question, above
