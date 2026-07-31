@@ -8,7 +8,7 @@ publish: false
 
 <br><br><br><br><br><br><br><br><br><br>
 
- Emerging Practices of Working with AI
+ Notes on Advancing My AI Practice
 
 # Peter's Takes - Appendix B
 
@@ -28,7 +28,7 @@ publish: false
 
 <br>
 
-#### If our students are mostly doing this, they're behind.
+#### If our students are mostly doing browser chatting, they're behind.
 
 # Three Surfaces {bg:#100e17}
 
@@ -109,15 +109,24 @@ publish: false
 
 # GD Office Hours is my working example.
 
+# ---give a little summary of what it does
 
-## I Converted My Slides, Notes, Lessons, and Assignments Into a Wiki {bg:#100e17}
+# Nothing {.notitle bg:#aaaaaa}
 
+- Turned all my teaching materials - slides, notes, lessons, assignments - into a "knowledge bundle"
+- A kind of wiki formatted for people and LLMs alike
+- More recently formalized by:
 
+	- Andrej Karpathy - https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5
+	- Google - https://www.mejba.me/blog/google-open-knowledge-format-okf-explained
+	
+
+## Online Version
 
 ![[web-gdoh-screenshot.png|800]]
 
 
-# A Corpus (Workspace) of Markdown Files {bg:#100e17}
+## But Its Best Version Is A Corpus of Markdown Files {bg:#100e17}
 
 ![[obsidianScreenshot1.png|800]]!
 
@@ -134,18 +143,20 @@ publish: false
 
 ---
 
-# GDOH Has Five Parts
+# GDOH Has Two Parts
 
-- **Course content** — storytelling and worldbuilding concepts, terms, definitions, and explanations
-- **Unreal** — tutorials and a practical wiki
-- **References** — curated game and film examples
-- **Examples** —  of productive conversations
-- ***Instructions*** — how to speak with the student (i.e. refuses to generate ideas)
+- **Knowledge Bundle**
+	- **Course content** — storytelling and worldbuilding concepts, terms, definitions, and explanations
+	- **Unreal** — tutorials and a practical wiki
+	- **References** — curated game and film examples
+- **Agent Specification**
+	- ***Reccorded Examples*** —  of productive conversations
+	- ***Instructions*** — how to speak with the student (i.e. refuses to generate ideas)
+	- ***LLM-agnostic*** — works with many models
 
-<br>
+<br><br>
 
-### The system is LLM-agnostic.
-
+Appendix C comments on terminology. 
 # Instructions  {bg:#000000} 
 
 ![[GDOH_Instructions.png|1000]]
@@ -178,7 +189,7 @@ publish: false
 ![[projectOutputExample2.png|760]]
 
 
-## Learning on the Internet is Chaos Inside Infinity {bg:#100e17}
+## Learning on the Internet is Chaos Inside an Infinity {bg:#100e17}
 
 ![[projectOutputExample3.png|760]]
 
@@ -274,6 +285,7 @@ publish: false
 	- Claude and Codex are peers.  Gemini is right there with them
 	- Their "CLI's" are Claude Code, Codex (ChatGPT), and Antigravity (Gemini)
 	- Peter pays for - Claude, Codex, Gemini, Perplexity, Deepseek (per token)
+	- OpenAI just announced pay as you go cheap for their modest models
 	- Get to know Claude's "Plan Mode"
 	- Google:  Google search, AI Mode, and Gemini are not the same thing
 - Chinese LLM's. ***Our Chinese students use these.*** 
@@ -289,3 +301,9 @@ publish: false
 
 
 
+# Appendix C
+
+The GDOH is an example of what?  Give me the concise term.<br><br>
+I can't.  <br><br>
+It is 
+- *a full knowledge bundle plus a behavior spec, packaged as one distributable unit that turns a generic coding agent into a specific one via in-context learning.*
